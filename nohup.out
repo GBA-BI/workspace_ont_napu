@@ -1,0 +1,2586 @@
+[2023-08-16 10:02:00,79] [info] Running with database db.url = jdbc:hsqldb:mem:662d27ca-0b73-44ee-9a46-f4891d8d84fc;shutdown=false;hsqldb.tx=mvcc
+Aug 16, 2023 10:02:01 AM liquibase.database
+INFO: Set default schema name to PUBLIC
+Aug 16, 2023 10:02:01 AM liquibase.lockservice
+INFO: Successfully acquired change log lock
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Creating database history table with name: PUBLIC.DATABASECHANGELOG
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Reading from PUBLIC.DATABASECHANGELOG
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table EXECUTION created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table JES_JOB created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table LOCAL_JOB created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/db_schema.xml::db_schema_other_table_alldb::scottfrazer ran successfully in 13ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table SYMBOL created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/db_schema.xml::db_schema_symbol_table_otherdb::scottfrazer ran successfully in 4ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Index STATUS_IDX created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to SYMBOL (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to JES_JOB (EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to LOCAL_JOB (EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/db_schema.xml::db_schema_constraints::scottfrazer ran successfully in 14ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Null constraint dropped from SYMBOL.ITERATION
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/symbol_iteration_null.xml::symbol_iteration_null::kshakir ran successfully in 1ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION_AUX created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/wdl_and_inputs.xml::WORKFLOW_EXECUTION_AUX::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to WORKFLOW_EXECUTION_AUX (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_EXECUTION_AUX(WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/wdl_and_inputs.xml::WE_AUX_CONSTRAINTS::mcovarr ran successfully in 4ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Column WORKFLOW_EXECUTION.WDL_URI dropped
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Column LOCAL_JOB.COMMAND dropped
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/drop_workflow_uri_and_local_command.xml::drop_workflow_uri_and_local_command::kshakir ran successfully in 4ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Null constraint dropped from LOCAL_JOB.PID
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Null constraint dropped from LOCAL_JOB.RC
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/local_job_allow_null.xml::local_job_allow_null::kshakir ran successfully in 2ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to SYMBOL.ITERATION
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/symbol_iteration_not_null.xml::symbol_iteration_not_null::kshakir ran successfully in 3ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_EXECUTION(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION(WORKFLOW_EXECUTION_ID, CALL_FQN)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to SYMBOL(WORKFLOW_EXECUTION_ID, SCOPE, NAME, ITERATION, IO)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to LOCAL_JOB(EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to JES_JOB(EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/add_unique_constraints.xml::add_unique_constraints::kshakir ran successfully in 9ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: SYMBOL.WDL_VALUE datatype was changed to LONGVARCHAR
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/lengthen_wdl_value.xml::LENGTHEN_WDL_VALUE::sfrazer ran successfully in 2ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Columns INDEX(INT) added to EXECUTION
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION.INDEX
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/add_index_in_execution.xml::add-index-in-execution::tjeandet ran successfully in 4ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Column SYMBOL.ITERATION renamed to INDEX
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/rename_iteration_to_index.xml::rename-iteration-to-index::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Table SGE_JOB created
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/sge.xml::sge::scottfrazer ran successfully in 2ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to SGE_JOB (EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/sge.xml::db_schema_constraints::scottfrazer ran successfully in 2ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key FK_EXECUTION_WORKFLOW_EXECUTION_ID dropped
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint UK_EX_WORKFLOW_EXECUTION_ID dropped from EXECUTION
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION(WORKFLOW_EXECUTION_ID, CALL_FQN, INDEX)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Column EXECUTION.INDEX renamed to IDX
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/change_execution_unique_constraint.xml::change_execution_unique_constraint::tjeandet ran successfully in 9ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Column LOCAL_JOB.RC dropped
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Columns RC(INT) added to EXECUTION
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/rc.xml::rc::mcovarr ran successfully in 3ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: Columns WORKFLOW_OPTIONS(LONGVARCHAR) added to WORKFLOW_EXECUTION_AUX
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_options.xml::workflow-options::sfrazer ran successfully in 1ms
+Aug 16, 2023 10:02:02 AM liquibase.changelog
+INFO: JES_JOB.JES_ID datatype was changed to VARCHAR(100)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: JES_JOB.JES_STATUS datatype was changed to VARCHAR(100)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/jes_id_update.xml::jes_id_update::chrisl ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: SGE_JOB.SGE_JOB_NUMBER datatype was changed to INT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/optional_sge_ids.xml::optional_sge_ids::chrisl ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns START_DT(datetime) added to EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns END_DT(datetime) added to EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/add_start_end_time_in_execution.xml::add-start-end-time-in-execution::jgentry ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JES_JOB.JES_ID renamed to JES_RUN_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/rename_jes_id.xml::rename-jes-id-to-jes-run-id::sfrazer ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns WORKFLOW_NAME(VARCHAR(500)) added to WORKFLOW_EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/add_workflow_name.xml::workflow-name::mcovarr ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns REPORTABLE_RESULT(TINYINT) added to SYMBOL
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/top_level_output.xml::top_level_output::chrisl ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.WORKFLOW_EXECUTION_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.WDL_SOURCE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.JSON_INPUTS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.WORKFLOW_OPTIONS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_execution_aux_not_null.xml::workflow_execution_aux_not_null::tjeandet ran successfully in 8ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns ALLOWS_RESULT_REUSE(BOOLEAN),DOCKER_IMAGE_HASH(VARCHAR(100)),RESULTS_CLONED_FROM(INT),EXECUTION_HASH(VARCHAR(100)) added to EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index HASH_INDEX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns HASH(VARCHAR(100)) added to SYMBOL
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (RESULTS_CLONED_FROM)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_result_caching.xml::call_result_caching::chrisl ran successfully in 13ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table EXECUTION_EVENT created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION_EVENT (EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION_EVENT(EXECUTION_ID, DESCRIPTION)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/events_table.xml::execution_event_table::chrisl ran successfully in 6ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from JES_JOB.JES_RUN_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from JES_JOB.JES_STATUS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from SGE_JOB.SGE_JOB_NUMBER
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sync_not_null_constraints.xml::job_not_null_columns::kshakir ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION_EVENT.END_DT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sync_not_null_constraints.xml::events_end_dt_not_null::kshakir ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to SGE_JOB(EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sge_job_execution_unique_key.xml::sge_job_execution_unique_key::kshakir ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns ATTEMPT(INT) added to EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION.ATTEMPT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key FK_EXECUTION_WORKFLOW dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_WORKFLOW_CALL_INDEX dropped from EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION(WORKFLOW_EXECUTION_ID, CALL_FQN, IDX, ATTEMPT)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/add_attempt_in_execution.xml::add-attempt-in-execution::tjeandet ran successfully in 11ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table EXECUTION_INFO created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::CREATE_EXECUTION_INFO::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION_INFO (EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::add_foreign_key_constraints::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns BACKEND_TYPE(VARCHAR(255)) added to EXECUTION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::add_backend_type_column::mcovarr ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::insert_data_from_backend_tables::mcovarr ran successfully in 10ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::set_backend_type::mcovarr ran successfully in 4ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table JES_JOB dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SGE_JOB dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table LOCAL_JOB dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::drop_job_tables::mcovarr ran successfully in 6ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION_INFO(EXECUTION_ID, INFO_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::execution_info_uniqueness_constraint::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION.BACKEND_TYPE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::execution_backend_type_not_null::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table RUNTIME_ATTRIBUTES created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to RUNTIME_ATTRIBUTES (EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to RUNTIME_ATTRIBUTES(EXECUTION_ID, ATTRIBUTE_NAME)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/runtime_attributes_table.xml::runtime-attributes-table::tjeandet ran successfully in 5ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table FAILURE_EVENT created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to FAILURE_EVENT (EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to FAILURE_EVENT (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/failure_table.xml::failure_table::chrisl ran successfully in 5ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table METADATA_JOURNAL created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_journal::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_WORKFLOW_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_workflow_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_JOB_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_job_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_JOB_AND_KEY_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_job_and_key_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns METADATA_VALUE_TYPE(VARCHAR(10)) added to METADATA_JOURNAL
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_typed_values.xml::metadata_typed_values::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: METADATA_JOURNAL.METADATA_JOURNAL_ID datatype was changed to BIGINT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to METADATA_JOURNAL.METADATA_JOURNAL_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::metadata_journal_id_int_to_big_int::kshakir ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_summary::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_METADATA_SUMMARY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_uuid_idx::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_NAME_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_name_idx::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_STATUS_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_status_idx::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: METADATA_JOURNAL.METADATA_TIMESTAMP datatype was changed to DATETIME(6)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal_subsecond_timestamp.xml::metadata_journal_subsecond_timestamp::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to METADATA_JOURNAL.METADATA_TIMESTAMP
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal_subsecond_timestamp.xml::metadata_journal_timestamp_not_null::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_STORE created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store.xml::WORKFLOW_STORE::chrisl ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_STORE(WORKFLOW_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store.xml::workflow_store_uuid_index::kshakir ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index WORKFLOW_STORE_STATE_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store.xml::workflow_store_state_index::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table BACKEND_KV_STORE created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/backend_KV_Store.xml::BACKEND_KV_STORE::rmunshi ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to BACKEND_KV_STORE(WORKFLOW_EXECUTION_UUID, CALL_FQN, JOB_SCATTER_INDEX, JOB_RETRY_ATTEMPT, STORE_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/backend_KV_Store.xml::backend_KV_store_job_key_constraint::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table JOB_STORE created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store.xml::JOB_STORE::chrisl ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index JOB_STORE_UUID_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store.xml::job_store_uuid_index::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE(WORKFLOW_UUID, CALL_FQN, JOB_SCATTER_INDEX, JOB_RETRY_ATTEMPT)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store.xml::job_store_jobkey_index::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_METAINFO created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_metainfo::chrisl ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_RESULT_METAINFO(WORKFLOW_UUID, CALL_FQN, JOB_SCATTER_INDEX)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_metainfo_uniqueness::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_HASH created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_hashes::chrisl ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_HASH(HASH_KEY, RESULT_METAINFO_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_hashes_uniqueness::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_HASH (RESULT_METAINFO_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_hashes_uniqueness_foreign_key::chrisl ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_SIMPLETON created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_simpletons::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_RESULT_SIMPLETON(SIMPLETON_KEY, RESULT_METAINFO_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_simpletons_uniqueness::chrisl ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_RESULT_SIMPLETON (RESULT_METAINFO_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_simpletons_foreign_key::chrisl ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CALL_CACHING_RESULT_METAINFO.ALLOW_RESULT_REUSE datatype was changed to BOOLEAN
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_allow_result_reuse_fix.xml::call_caching_fix_boolean::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Default value added to CALL_CACHING_RESULT_METAINFO.ALLOW_RESULT_REUSE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_allow_result_reuse_fix.xml::call_caching_reuse_default::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table JOB_STORE_RESULT_SIMPLETON created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_result_simpletons::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE_RESULT_SIMPLETON(SIMPLETON_KEY, JOB_STORE_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_result_simpletons_uniqueness::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_RESULT_SIMPLETON (JOB_STORE_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_result_simpletons_foreign_key::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE.JOB_OUTPUT dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_remove_job_output::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::WORKFLOW_STORE_MIGRATION::mcovarr ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::JOB_STORE_MIGRATION::mcovarr ran successfully in 6ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from JOB_STORE_RESULT_SIMPLETON.SIMPLETON_VALUE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::JOB_STORE_RESULT_SIMPLETON_VALUE_NULLABLE::mcovarr ran successfully in 16ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_EXECUTION + EXECUTION + SYMBOL + JOB_STORE -> JOB_STORE_RESULT_SIMPLETON migration complete.
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::JOB_STORE_RESULT_SIMPLETON_MIGRATION::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::BACKEND_KV_STORE_MIGRATION::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Workflow option renaming migration complete.
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::WORKFLOW_OPTIONS_RENAME_MIGRATION::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/summary_status_table.xml::summary_status_table::kshakir ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS(SUMMARY_TABLE_NAME, SUMMARIZED_TABLE_NAME)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/summary_status_table.xml::summary_status_summarized_table_name_index::kshakir ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_RESULT_METAINFO.WORKFLOW_UUID renamed to WORKFLOW_EXECUTION_UUID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column WORKFLOW_STORE.WORKFLOW_UUID renamed to WORKFLOW_EXECUTION_UUID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE.WORKFLOW_UUID renamed to WORKFLOW_EXECUTION_UUID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names.xml::workflow_execution_uuid::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column METADATA_JOURNAL.METADATA_CALL_FQN renamed to CALL_FQN
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column METADATA_JOURNAL.METADATA_CALL_INDEX renamed to JOB_SCATTER_INDEX
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column METADATA_JOURNAL.METADATA_CALL_ATTEMPT renamed to JOB_RETRY_ATTEMPT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names.xml::call_job_identifiers::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/embiggen_metadata_value.xml::entry_or_journal_existence_xor::mcovarr ran successfully in 13ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Marking ChangeSet: changesets/embiggen_metadata_value.xml::embiggen_metadata_entry::mcovarr ran despite precondition failure due to onFail='MARK_RAN': 
+          changelog.xml : Table PUBLIC.METADATA_ENTRY does not exist
+
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: METADATA_JOURNAL.METADATA_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/embiggen_metadata_value.xml::embiggen_metadata_journal::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_JOB_DETRITUS created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_job_detritus.xml::call_caching_job_detritus::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_JOB_DETRITUS(JOB_DETRITUS_KEY, RESULT_METAINFO_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_job_detritus.xml::call_caching_job_detritus_key_uniqueness::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_JOB_DETRITUS (RESULT_METAINFO_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_job_detritus.xml::call_caching_job_detritus_foreign_key::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: JOB_STORE.JOB_SUCCESSFUL datatype was changed to BOOLEAN
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_tinyints.xml::job_store_fix_job_successful::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: JOB_STORE.RETRYABLE_FAILURE datatype was changed to BOOLEAN
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_tinyints.xml::job_store_fix_job_retryable_failure::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to JOB_STORE.JOB_SUCCESSFUL
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_tinyints.xml::job_store_not_nullable_job_successful::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index JOB_STORE_UUID_IDX dropped from table JOB_STORE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_NAME_IDX dropped from table WORKFLOW_METADATA_SUMMARY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_STATUS_IDX dropped from table WORKFLOW_METADATA_SUMMARY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index WORKFLOW_STORE_STATE_IDX dropped from table WORKFLOW_STORE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_JOB_DETRITUS_KEY dropped from CALL_CACHING_JOB_DETRITUS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_RESULT_METAINFO dropped from CALL_CACHING_RESULT_METAINFO
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_HASH dropped from CALL_CACHING_HASH
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_RESULT_SIMPLETON dropped from CALL_CACHING_RESULT_SIMPLETON
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint JOB_STORE_JOBKEY_IDX dropped from JOB_STORE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_BACKEND_KV_STORE_KEY dropped from BACKEND_KV_STORE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UK_JOB_STORE_RESULT_SIMPLETON dropped from JOB_STORE_RESULT_SIMPLETON
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint SUMMARY_STATUS_SUMMARY_TABLE_NAME_SUMMARIZED_TABLE_NAME_INDEX dropped from SUMMARY_STATUS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint WORKFLOW_METADATA_UUID_IDX dropped from WORKFLOW_METADATA_SUMMARY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint WORKFLOW_STORE_UUID_IDX dropped from WORKFLOW_STORE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key CCJD_RESULT_METAINFO_ID_FK dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key CCH_RESULT_METAINFO_ID_FK dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key CCRS_RESULT_METAINFO_ID_FK dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key JSRS_JOB_STORE_FK dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_JOB_DETRITUS renamed to CALL_CACHING_DETRITUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_METAINFO renamed to CALL_CACHING_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_HASH renamed to CALL_CACHING_HASH_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_SIMPLETON renamed to CALL_CACHING_SIMPLETON_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table BACKEND_KV_STORE renamed to JOB_KEY_VALUE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table JOB_STORE renamed to JOB_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table JOB_STORE_RESULT_SIMPLETON renamed to JOB_STORE_SIMPLETON_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table METADATA_JOURNAL renamed to METADATA_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS renamed to SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY renamed to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_STORE renamed to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.CALL_CACHING_JOB_DETRITUS_ID renamed to CALL_CACHING_DETRITUS_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.JOB_DETRITUS_KEY renamed to DETRITUS_KEY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.JOB_DETRITUS_VALUE renamed to DETRITUS_VALUE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_ENTRY.CALL_CACHING_RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_ENTRY.JOB_SCATTER_INDEX renamed to JOB_INDEX
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_ENTRY.CALL_FQN renamed to CALL_FULLY_QUALIFIED_NAME
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_HASH_ENTRY.RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_HASH_ENTRY.CALL_CACHING_HASH_ID renamed to CALL_CACHING_HASH_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_SIMPLETON_ENTRY.RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column CALL_CACHING_SIMPLETON_ENTRY.CALL_CACHING_RESULT_SIMPLETON_ID renamed to CALL_CACHING_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.JOB_RETRY_ATTEMPT renamed to JOB_ATTEMPT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.JOB_SCATTER_INDEX renamed to JOB_INDEX
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.BACKEND_KV_STORE_ID renamed to JOB_KEY_VALUE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.CALL_FQN renamed to CALL_FULLY_QUALIFIED_NAME
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.JOB_RETRY_ATTEMPT renamed to JOB_ATTEMPT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.JOB_SCATTER_INDEX renamed to JOB_INDEX
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.JOB_STORE_ID renamed to JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.CALL_FQN renamed to CALL_FULLY_QUALIFIED_NAME
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_ID renamed to JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_RESULT_SIMPLETON_ID renamed to JOB_STORE_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.SUMMARY_STATUS_ID renamed to SUMMARY_STATUS_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column WORKFLOW_METADATA_SUMMARY_ENTRY.END_DT renamed to END_TIMESTAMP
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column WORKFLOW_METADATA_SUMMARY_ENTRY.START_DT renamed to START_TIMESTAMP
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column WORKFLOW_METADATA_SUMMARY_ENTRY.WORKFLOW_METADATA_SUMMARY_ID renamed to WORKFLOW_METADATA_SUMMARY_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column WORKFLOW_STORE_ENTRY.WORKFLOW_STORE_ID renamed to WORKFLOW_STORE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_DETRITUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_HASH_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_SIMPLETON_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from JOB_KEY_VALUE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from JOB_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from JOB_STORE_SIMPLETON_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key dropped from WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_DETRITUS_ENTRY (CALL_CACHING_DETRITUS_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_HASH_ENTRY (CALL_CACHING_HASH_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_SIMPLETON_ENTRY (CALL_CACHING_SIMPLETON_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to JOB_KEY_VALUE_ENTRY (JOB_KEY_VALUE_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to JOB_STORE_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_SIMPLETON_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to SUMMARY_STATUS_ENTRY (SUMMARY_STATUS_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to WORKFLOW_METADATA_SUMMARY_ENTRY (WORKFLOW_METADATA_SUMMARY_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to WORKFLOW_STORE_ENTRY (WORKFLOW_STORE_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_DETRITUS_ENTRY.CALL_CACHING_DETRITUS_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_ENTRY.CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_HASH_ENTRY.CALL_CACHING_HASH_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_SIMPLETON_ENTRY.CALL_CACHING_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to JOB_KEY_VALUE_ENTRY.JOB_KEY_VALUE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_ENTRY.JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to SUMMARY_STATUS_ENTRY.SUMMARY_STATUS_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to WORKFLOW_METADATA_SUMMARY_ENTRY.WORKFLOW_METADATA_SUMMARY_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to WORKFLOW_STORE_ENTRY.WORKFLOW_STORE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_DETRITUS_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_HASH_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_SIMPLETON_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_DETRITUS_ENTRY(CALL_CACHING_ENTRY_ID, DETRITUS_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_HASH_ENTRY(CALL_CACHING_ENTRY_ID, HASH_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_SIMPLETON_ENTRY(CALL_CACHING_ENTRY_ID, SIMPLETON_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to JOB_KEY_VALUE_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX, JOB_ATTEMPT, STORE_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX, JOB_ATTEMPT)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE_SIMPLETON_ENTRY(JOB_STORE_ENTRY_ID, SIMPLETON_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS_ENTRY(SUMMARY_TABLE_NAME, SUMMARIZED_TABLE_NAME)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_METADATA_SUMMARY_ENTRY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_STORE_ENTRY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_JOB_STORE_ENTRY_WEU created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WN created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WS created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_STORE_ENTRY_WS created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names_again.xml::standardize_column_names_again::kshakir ran successfully in 67ms
+[2023-08-16 10:02:03,45] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+[2023-08-16 10:02:03,46] [info] [RenameWorkflowOptionsInMetadata] 100%
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: RenameWorkflowOptionsInMetadata complete.
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/rename_workflow_options_in_metadata.xml::rename_workflow_options_in_metadata::tjeandet ran successfully in 23ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: EncryptWorkflowStoreEntryWorkflowOptions complete.
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/encrypt_and_clear_workflow_options.xml::encrypt_workflow_store_entry_workflow_options::kshakir ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ClearMetadataEntryWorkflowOptions complete.
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/encrypt_and_clear_workflow_options.xml::clear_metadata_entry_workflow_options::kshakir ran successfully in 0ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SUB_WORKFLOW_STORE_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::SUB_WORKFLOW_STORE_ENTRY::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_SUB_WORKFLOW_STORE_ENTRY_PWEU created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::sub_workflow_store_uuid_index::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to SUB_WORKFLOW_STORE_ENTRY(PARENT_WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, CALL_INDEX, CALL_ATTEMPT)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::sub_workflow_store_jobkey_index::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to SUB_WORKFLOW_STORE_ENTRY (ROOT_WORKFLOW_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::sub_workflow_store_root_workflow_fk::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns IMPORTS_ZIP(BLOB) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_imports_file.xml::workflow-store-imports-file::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns CUSTOM_LABELS(LONGVARCHAR) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_labels_file.xml::workflow-store-labels-file::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CALL_CACHING_DETRITUS_ENTRY.DETRITUS_VALUE datatype was changed to LONGVARCHAR
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/embiggen_detritus_value.xml::embiggen_call_caching_detritus_entry::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key FK_CALL_CACHING_HASH_ENTRY_CALL_CACHING_ENTRY_ID dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key FK_JOB_STORE_RESULT_SIMPLETON_JOB_STORE_ENTRY_ID dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key FK_SUB_WORKFLOW_STORE_ROOT_WORKFLOW_ID_WORKFLOW_STORE_ENTRY_ID dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_CALL_CACHING_ENTRY_WEU_CQFN_JI dropped from CALL_CACHING_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_CALL_CACHING_HASH_ENTRY_CCEI dropped from CALL_CACHING_HASH_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_HASH_ENTRY(CALL_CACHING_ENTRY_ID, HASH_KEY)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_HASH_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to SUB_WORKFLOW_STORE_ENTRY (ROOT_WORKFLOW_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names_patches.xml::standardize_column_names_patches::kshakir ran successfully in 12ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CALL_CACHING_DETRITUS_ENTRY.DETRITUS_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CALL_CACHING_SIMPLETON_ENTRY.SIMPLETON_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: JOB_STORE_ENTRY.EXCEPTION_MESSAGE datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: JOB_STORE_SIMPLETON_ENTRY.SIMPLETON_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.CUSTOM_LABELS datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_DEFINITION datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_INPUTS datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_OPTIONS datatype was changed to LONGTEXT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names_patches.xml::hsqldb_longvarchar_to_longtext::kshakir ran successfully in 5ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from CALL_CACHING_DETRITUS_ENTRY.DETRITUS_VALUE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from CALL_CACHING_SIMPLETON_ENTRY.SIMPLETON_VALUE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from JOB_STORE_SIMPLETON_ENTRY.SIMPLETON_VALUE
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.WORKFLOW_DEFINITION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.WORKFLOW_INPUTS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.WORKFLOW_OPTIONS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.CUSTOM_LABELS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/nullable_lobs.xml::nullable_lobs::kshakir ran successfully in 4ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns JOB_ATTEMPT(INT) added to CALL_CACHING_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/add_attempt_in_call_caching_entry.xml::add_attempt_in_call_caching_entry::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_STORE_ENTRY.CUSTOM_LABELS
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/replace_empty_custom_labels.xml::custom_labels_not_null::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CALL_CACHING_AGGREGATION_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_aggregated_hashes.xml::call_caching_aggregation_entry::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_AGGREGATION_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_CALL_CACHING_AGGREGATION_ENTRY_BA_IFA created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_aggregated_hashes.xml::call_caching_aggregation_entry_keys_and_indexes::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CUSTOM_LABEL_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::custom_LABEL_entry::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CUSTOM_LABEL_ENTRY (WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::WMSE_workflow_execution_uuid_foreign_key::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CUSTOM_LABEL_ENTRY(CUSTOM_LABEL_KEY, CUSTOM_LABEL_VALUE, WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::custom_label_entry_index::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_KEY datatype was changed to VARCHAR(63)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_VALUE datatype was changed to VARCHAR(63)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::modify label key/value data types::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table DOCKER_HASH_STORE_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/docker_hash_store.xml::DOCKER_HASH_STORE_ENTRY::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to DOCKER_HASH_STORE_ENTRY(WORKFLOW_EXECUTION_UUID, DOCKER_TAG)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/docker_hash_store.xml::docker_hash_store_uuid_unique_constraint::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns WORKFLOW_TYPE(VARCHAR(30)),WORKFLOW_TYPE_VERSION(VARCHAR(255)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_type_and_version.xml::workflow-store-type-and-version::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table EXECUTION_INFO dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table EXECUTION_EVENT dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table FAILURE_EVENT dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table RUNTIME_ATTRIBUTES dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SYMBOL dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table EXECUTION dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION_AUX dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/remove_pre_pbe_tables.xml::drop-pre-pbe-tables::mcovarr ran successfully in 6ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key FK_CUSTOM_LABEL_ENTRY_WORKFLOW_EXECUTION_UUID dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_CUSTOM_LABEL_ENTRY_CLK_CLV_WEU dropped from CUSTOM_LABEL_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_SUMMARY_STATUS_ENTRY_STN_STN dropped from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_WORKFLOW_METADATA_SUMMARY_ENTRY_WEU dropped from WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CUSTOM_LABEL_ENTRY dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table METADATA_ENTRY dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS_ENTRY dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY_ENTRY dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/move_sql_metadata_changelog.xml::move_metadata_changelog::kshakir ran successfully in 5ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_STATE datatype was changed to varchar(20)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_state_widening.xml::workflow-store-state-widening::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns RESTARTED(BOOLEAN) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_restarted_column.xml::workflow-store-restarted-column::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_restarted_column.xml::update-restartable::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns WORKFLOW_ROOT(VARCHAR(100)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_workflow_root_column.xml::workflow-store-workflow-root-column::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column WORKFLOW_STORE_ENTRY.RESTARTED dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns CROMWELL_ID(VARCHAR(100)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns HEARTBEAT_TIMESTAMP(TIMESTAMP) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_horizontal_db.xml::workflow-store-horizontal-db::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns WORKFLOW_URL(VARCHAR(255)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/add_workflow_url_in_workflow_store_entry.xml::add_workflow_url_in_workflow_store_entry::sshah ran successfully in 0ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_URL datatype was changed to VARCHAR(2000)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/change_max_size_workflow_url.xml::change_max_size_for_workflow_url::sshah ran successfully in 0ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns DOCKER_SIZE(BIGINT) added to DOCKER_HASH_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/docker_hash_store_add_size_column.xml::docker_hash_store_entry_add_size_column::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_HASH_ENTRY.CALL_CACHING_HASH_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_call_caching_hash_entry_id.xml::restore_auto_increment_call_caching_hash_entry_id::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns HOG_GROUP(VARCHAR(100)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/add_hog_group_in_workflow_store.xml::add_hog_group_in_workflow_store::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.HEARTBEAT_TIMESTAMP datatype was changed to DATETIME(6)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.SUBMISSION_TIME datatype was changed to DATETIME(6)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_STORE_ENTRY.SUBMISSION_TIME
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/resync_engine_schema.xml::resync-engine-schema::kshakir ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key FK_JOB_STORE_SIMPLETON_ENTRY_JOB_STORE_ENTRY_ID dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::drop_job_store_simpleton_entry_fk::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_ENTRY.JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::enlarge_job_store_entry_id::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::enlarge_job_store_simpleton_entry_id::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_ENTRY_ID datatype was changed to BIGINT
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::enlarge_job_store_simpleton_entry_fk::mcovarr ran successfully in 0ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::recreate_job_store_simpleton_entry_fk::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.lockservice
+INFO: Successfully released change log lock
+[2023-08-16 10:02:03,61] [info] Running with database db.url = jdbc:hsqldb:mem:1d9a2466-6797-4e77-ae55-5966ffc80cc1;shutdown=false;hsqldb.tx=mvcc
+Aug 16, 2023 10:02:03 AM liquibase.database
+INFO: Set default schema name to PUBLIC
+Aug 16, 2023 10:02:03 AM liquibase.lockservice
+INFO: Successfully acquired change log lock
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Creating database history table with name: PUBLIC.SQLMETADATADATABASECHANGELOG
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Reading from PUBLIC.SQLMETADATADATABASECHANGELOG
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table CUSTOM_LABEL_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table METADATA_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CUSTOM_LABEL_ENTRY(CUSTOM_LABEL_KEY, CUSTOM_LABEL_VALUE, WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS_ENTRY(SUMMARY_TABLE_NAME, SUMMARIZED_TABLE_NAME)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_METADATA_SUMMARY_ENTRY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Foreign key constraint added to CUSTOM_LABEL_ENTRY (WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WN created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WS created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_JOB_AND_KEY_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_JOB_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_WORKFLOW_IDX created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index SYS_IDX_11226 created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/move_sql_metadata_changelog.xml::move_metadata_changelog::kshakir ran successfully in 14ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_KEY datatype was changed to VARCHAR(255)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_VALUE datatype was changed to VARCHAR(255)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet changesets/change_max_size_label_entry.xml::change_max_size_for_key_and_value_in_label::sshah ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data deleted from CUSTOM_LABEL_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_CUSTOM_LABEL_ENTRY_CLK_CLV_WEU dropped from CUSTOM_LABEL_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to CUSTOM_LABEL_ENTRY(CUSTOM_LABEL_KEY, WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/delete_duplicate_custom_labels.xml::delete_duplicate_custom_labels::kshakir ran successfully in 4ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns SUBMISSION_TIMESTAMP(DATETIME(6)) added to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_submission_timestamp_metadata_summary.xml::add_submission_timestamp_in_metadata_entry::sshah ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_CUSTOM_LABEL_ENTRY_CLK_CLV created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/custom_label_entry_key_value_index.xml::custom_label_entry_key_value_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns PARENT_WORKFLOW_EXECUTION_UUID(VARCHAR(100)),ROOT_WORKFLOW_EXECUTION_UUID(VARCHAR(100)) added to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_PWEU created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_RWEU created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint UC_SUMMARY_STATUS_ENTRY_STN_STN dropped from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.SUMMARY_TABLE_NAME renamed to SUMMARY_NAME
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.SUMMARIZED_TABLE_NAME dropped
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.MAXIMUM_ID renamed to SUMMARY_POSITION
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS_ENTRY(SUMMARY_NAME)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_parent_and_root_workflow_execution_uuid.xml::add_parent_and_root_workflow_execution_uuid::kshakir ran successfully in 6ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data deleted from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_parent_and_root_workflow_typo_fix.xml::add_parent_and_root_workflow_typo_fix::kshakir ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_JOB_AND_KEY_IDX dropped from table METADATA_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index METADATA_JOB_IDX dropped from table METADATA_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/metadata_index_removals.xml::metadata_index_removals::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Columns METADATA_ARCHIVE_STATUS(VARCHAR(30)) added to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_metadata_archive_status.xml::add_metadata_archive_status::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_MAS created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_metadata_archive_status.xml::metadata_archive_status_index::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Table SUMMARY_QUEUE_ENTRY created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/summarization_queue_table.xml::summary_queue_table::gsterin ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/summarization_queue_table.xml::summary_queue_initialization::gsterin ran successfully in 3ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Primary key added to SUMMARY_QUEUE_ENTRY (METADATA_JOURNAL_ID)
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/summarization_queue_table_add_primary_key.xml::summary_queue_add_primary_key::gsterin ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/remove_non_summarizable_metadata_from_queue.xml::delete_non_summarizable_metadata_from_queue::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_MAS dropped from table WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_MAS_ET created
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/update_metadata_archive_index.xml::update_old_metadata_archive_status_index::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: Data updated in WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:02:03 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/reset_archive_statuses_to_null.xml::reset_archive_statuses_to_null::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:02:03 AM liquibase.lockservice
+INFO: Successfully released change log lock
+[2023-08-16 10:02:04,05] [info] Slf4jLogger started
+[2023-08-16 10:02:04,21] [info] Workflow heartbeat configuration:
+{
+  "cromwellId" : "cromid-6a1d7e7",
+  "heartbeatInterval" : "2 minutes",
+  "ttl" : "10 minutes",
+  "failureShutdownDuration" : "5 minutes",
+  "writeBatchSize" : 10000,
+  "writeThreshold" : 10000
+}
+[2023-08-16 10:02:04,25] [info] Metadata summary refreshing every 1 second.
+[2023-08-16 10:02:04,25] [info] No metadata archiver defined in config
+[2023-08-16 10:02:04,25] [info] No metadata deleter defined in config
+[2023-08-16 10:02:04,27] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+[2023-08-16 10:02:04,27] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+[2023-08-16 10:02:04,28] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+[2023-08-16 10:02:04,34] [info] JobRestartCheckTokenDispenser - Distribution rate: 50 per 1 seconds.
+[2023-08-16 10:02:04,36] [info] JobExecutionTokenDispenser - Distribution rate: 20 per 10 seconds.
+[2023-08-16 10:02:04,39] [info] SingleWorkflowRunnerActor: Version 74-unknown-SNAP
+[2023-08-16 10:02:04,40] [info] SingleWorkflowRunnerActor: Submitting workflow
+[2023-08-16 10:02:04,42] [info] Unspecified type (Unspecified version) workflow e79712a8-825f-4356-9fc2-d3407b3ce486 submitted
+[2023-08-16 10:02:04,44] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2me79712a8-825f-4356-9fc2-d3407b3ce486[0m
+[2023-08-16 10:02:04,44] [info] 1 new workflows fetched by cromid-6a1d7e7: e79712a8-825f-4356-9fc2-d3407b3ce486
+[2023-08-16 10:02:04,45] [info] WorkflowManagerActor: Starting workflow [38;5;2me79712a8-825f-4356-9fc2-d3407b3ce486[0m
+[2023-08-16 10:02:04,45] [info] WorkflowManagerActor: Successfully started WorkflowActor-e79712a8-825f-4356-9fc2-d3407b3ce486
+[2023-08-16 10:02:04,45] [info] Retrieved 1 workflows from the WorkflowStoreActor
+[2023-08-16 10:02:04,47] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+[2023-08-16 10:02:04,53] [info] MaterializeWorkflowDescriptorActor [[38;5;2me79712a8[0m]: Parsing workflow as WDL 1.0
+[2023-08-16 10:02:05,58] [info] WorkflowManagerActor: Workflow e79712a8-825f-4356-9fc2-d3407b3ce486 failed (during MaterializingWorkflowDescriptorState): cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor$$anon$1: Workflow input processing failed:
+Required workflow input 'cardEndToEndVcfMethyl.inputReads' not specified
+	at cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor.cromwell$engine$workflow$lifecycle$materialization$MaterializeWorkflowDescriptorActor$$workflowInitializationFailed(MaterializeWorkflowDescriptorActor.scala:257)
+	at cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor$$anonfun$2.applyOrElse(MaterializeWorkflowDescriptorActor.scala:227)
+	at cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor$$anonfun$2.applyOrElse(MaterializeWorkflowDescriptorActor.scala:222)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at akka.actor.FSM.processEvent(FSM.scala:707)
+	at akka.actor.FSM.processEvent$(FSM.scala:704)
+	at cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor.akka$actor$LoggingFSM$$super$processEvent(MaterializeWorkflowDescriptorActor.scala:169)
+	at akka.actor.LoggingFSM.processEvent(FSM.scala:847)
+	at akka.actor.LoggingFSM.processEvent$(FSM.scala:829)
+	at cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor.processEvent(MaterializeWorkflowDescriptorActor.scala:169)
+	at akka.actor.FSM.akka$actor$FSM$$processMsg(FSM.scala:701)
+	at akka.actor.FSM$$anonfun$receive$1.applyOrElse(FSM.scala:695)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at cromwell.engine.workflow.lifecycle.materialization.MaterializeWorkflowDescriptorActor.aroundReceive(MaterializeWorkflowDescriptorActor.scala:169)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:614)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:583)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[2023-08-16 10:02:09,35] [info] Not triggering log of restart checking token queue status. Effective log interval = None
+[2023-08-16 10:02:09,36] [info] WorkflowManagerActor: Workflow actor for e79712a8-825f-4356-9fc2-d3407b3ce486 completed with status 'Failed'. The workflow will be removed from the workflow store.
+[2023-08-16 10:02:09,38] [info] Not triggering log of execution token queue status. Effective log interval = None
+[2023-08-16 10:02:10,29] [info] SingleWorkflowRunnerActor workflow finished with status 'Failed'.
+[2023-08-16 10:02:14,28] [info] Workflow polling stopped
+[2023-08-16 10:02:14,29] [info] 0 workflows released by cromid-6a1d7e7
+[2023-08-16 10:02:14,30] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+[2023-08-16 10:02:14,30] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+[2023-08-16 10:02:14,30] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+[2023-08-16 10:02:14,30] [info] Aborting all running workflows.
+[2023-08-16 10:02:14,30] [info] JobExecutionTokenDispenser stopped
+[2023-08-16 10:02:14,30] [info] WorkflowStoreActor stopped
+[2023-08-16 10:02:14,30] [info] WorkflowLogCopyRouter stopped
+[2023-08-16 10:02:14,30] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+[2023-08-16 10:02:14,30] [info] WorkflowManagerActor: All workflows finished
+[2023-08-16 10:02:14,30] [info] WorkflowManagerActor stopped
+[2023-08-16 10:02:14,47] [info] Connection pools shut down
+[2023-08-16 10:02:14,47] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+[2023-08-16 10:02:14,47] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+[2023-08-16 10:02:14,47] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+[2023-08-16 10:02:14,47] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+[2023-08-16 10:02:14,47] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+[2023-08-16 10:02:14,47] [info] SubWorkflowStoreActor stopped
+[2023-08-16 10:02:14,47] [info] Shutting down IoProxy - Timeout = 1800 seconds
+[2023-08-16 10:02:14,47] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+[2023-08-16 10:02:14,47] [info] JobStoreActor stopped
+[2023-08-16 10:02:14,47] [info] CallCacheWriteActor stopped
+[2023-08-16 10:02:14,47] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+[2023-08-16 10:02:14,47] [info] KvWriteActor Shutting down: 0 queued messages to process
+[2023-08-16 10:02:14,47] [info] ServiceRegistryActor stopped
+[2023-08-16 10:02:14,47] [info] IoProxy stopped
+[2023-08-16 10:02:14,47] [info] DockerHashActor stopped
+[2023-08-16 10:02:14,50] [info] Database closed
+[2023-08-16 10:02:14,50] [info] Stream materializer shut down
+[2023-08-16 10:02:14,50] [info] WDL HTTP import resolver closed
+[2023-08-16 10:02:14,52] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+[2023-08-16 10:02:14,52] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+[2023-08-16 10:02:14,52] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+[2023-08-16 10:02:14,52] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+Workflow e79712a8-825f-4356-9fc2-d3407b3ce486 transitioned to state Failed
+[2023-08-16 10:08:34,53] [info] Running with database db.url = jdbc:hsqldb:mem:af91c5f9-efd7-41bd-a4ab-4454cfa90281;shutdown=false;hsqldb.tx=mvcc
+Aug 16, 2023 10:08:34 AM liquibase.database
+INFO: Set default schema name to PUBLIC
+Aug 16, 2023 10:08:35 AM liquibase.lockservice
+INFO: Successfully acquired change log lock
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Creating database history table with name: PUBLIC.DATABASECHANGELOG
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Reading from PUBLIC.DATABASECHANGELOG
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table EXECUTION created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table JES_JOB created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table LOCAL_JOB created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/db_schema.xml::db_schema_other_table_alldb::scottfrazer ran successfully in 22ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table SYMBOL created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/db_schema.xml::db_schema_symbol_table_otherdb::scottfrazer ran successfully in 6ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index STATUS_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to SYMBOL (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to JES_JOB (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to LOCAL_JOB (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/db_schema.xml::db_schema_constraints::scottfrazer ran successfully in 17ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Null constraint dropped from SYMBOL.ITERATION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/symbol_iteration_null.xml::symbol_iteration_null::kshakir ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION_AUX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/wdl_and_inputs.xml::WORKFLOW_EXECUTION_AUX::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to WORKFLOW_EXECUTION_AUX (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_EXECUTION_AUX(WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/wdl_and_inputs.xml::WE_AUX_CONSTRAINTS::mcovarr ran successfully in 5ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Column WORKFLOW_EXECUTION.WDL_URI dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Column LOCAL_JOB.COMMAND dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/drop_workflow_uri_and_local_command.xml::drop_workflow_uri_and_local_command::kshakir ran successfully in 6ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Null constraint dropped from LOCAL_JOB.PID
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Null constraint dropped from LOCAL_JOB.RC
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/local_job_allow_null.xml::local_job_allow_null::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to SYMBOL.ITERATION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/symbol_iteration_not_null.xml::symbol_iteration_not_null::kshakir ran successfully in 3ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_EXECUTION(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION(WORKFLOW_EXECUTION_ID, CALL_FQN)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to SYMBOL(WORKFLOW_EXECUTION_ID, SCOPE, NAME, ITERATION, IO)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to LOCAL_JOB(EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to JES_JOB(EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/add_unique_constraints.xml::add_unique_constraints::kshakir ran successfully in 11ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: SYMBOL.WDL_VALUE datatype was changed to LONGVARCHAR
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/lengthen_wdl_value.xml::LENGTHEN_WDL_VALUE::sfrazer ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns INDEX(INT) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION.INDEX
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/add_index_in_execution.xml::add-index-in-execution::tjeandet ran successfully in 3ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Column SYMBOL.ITERATION renamed to INDEX
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/rename_iteration_to_index.xml::rename-iteration-to-index::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table SGE_JOB created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/sge.xml::sge::scottfrazer ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to SGE_JOB (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/sge.xml::db_schema_constraints::scottfrazer ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key FK_EXECUTION_WORKFLOW_EXECUTION_ID dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint UK_EX_WORKFLOW_EXECUTION_ID dropped from EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION(WORKFLOW_EXECUTION_ID, CALL_FQN, INDEX)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Column EXECUTION.INDEX renamed to IDX
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/change_execution_unique_constraint.xml::change_execution_unique_constraint::tjeandet ran successfully in 10ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Column LOCAL_JOB.RC dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns RC(INT) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/rc.xml::rc::mcovarr ran successfully in 4ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns WORKFLOW_OPTIONS(LONGVARCHAR) added to WORKFLOW_EXECUTION_AUX
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_options.xml::workflow-options::sfrazer ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: JES_JOB.JES_ID datatype was changed to VARCHAR(100)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: JES_JOB.JES_STATUS datatype was changed to VARCHAR(100)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/jes_id_update.xml::jes_id_update::chrisl ran successfully in 4ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: SGE_JOB.SGE_JOB_NUMBER datatype was changed to INT
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/optional_sge_ids.xml::optional_sge_ids::chrisl ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns START_DT(datetime) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns END_DT(datetime) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/add_start_end_time_in_execution.xml::add-start-end-time-in-execution::jgentry ran successfully in 4ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Column JES_JOB.JES_ID renamed to JES_RUN_ID
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/rename_jes_id.xml::rename-jes-id-to-jes-run-id::sfrazer ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns WORKFLOW_NAME(VARCHAR(500)) added to WORKFLOW_EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/add_workflow_name.xml::workflow-name::mcovarr ran successfully in 4ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns REPORTABLE_RESULT(TINYINT) added to SYMBOL
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/top_level_output.xml::top_level_output::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.WORKFLOW_EXECUTION_ID
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.WDL_SOURCE
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.JSON_INPUTS
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_EXECUTION_AUX.WORKFLOW_OPTIONS
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_execution_aux_not_null.xml::workflow_execution_aux_not_null::tjeandet ran successfully in 6ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns ALLOWS_RESULT_REUSE(BOOLEAN),DOCKER_IMAGE_HASH(VARCHAR(100)),RESULTS_CLONED_FROM(INT),EXECUTION_HASH(VARCHAR(100)) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index HASH_INDEX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns HASH(VARCHAR(100)) added to SYMBOL
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (RESULTS_CLONED_FROM)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/call_result_caching.xml::call_result_caching::chrisl ran successfully in 15ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table EXECUTION_EVENT created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION_EVENT (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION_EVENT(EXECUTION_ID, DESCRIPTION)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/events_table.xml::execution_event_table::chrisl ran successfully in 6ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Null constraint dropped from JES_JOB.JES_RUN_ID
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Null constraint dropped from JES_JOB.JES_STATUS
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Null constraint dropped from SGE_JOB.SGE_JOB_NUMBER
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/sync_not_null_constraints.xml::job_not_null_columns::kshakir ran successfully in 3ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION_EVENT.END_DT
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/sync_not_null_constraints.xml::events_end_dt_not_null::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to SGE_JOB(EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/sge_job_execution_unique_key.xml::sge_job_execution_unique_key::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns ATTEMPT(INT) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION.ATTEMPT
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key FK_EXECUTION_WORKFLOW dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint UK_WORKFLOW_CALL_INDEX dropped from EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION(WORKFLOW_EXECUTION_ID, CALL_FQN, IDX, ATTEMPT)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/add_attempt_in_execution.xml::add-attempt-in-execution::tjeandet ran successfully in 11ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table EXECUTION_INFO created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::CREATE_EXECUTION_INFO::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to EXECUTION_INFO (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::add_foreign_key_constraints::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns BACKEND_TYPE(VARCHAR(255)) added to EXECUTION
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::add_backend_type_column::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::insert_data_from_backend_tables::mcovarr ran successfully in 9ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::set_backend_type::mcovarr ran successfully in 5ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table JES_JOB dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table SGE_JOB dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table LOCAL_JOB dropped
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::drop_job_tables::mcovarr ran successfully in 5ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to EXECUTION_INFO(EXECUTION_ID, INFO_KEY)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::execution_info_uniqueness_constraint::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to EXECUTION.BACKEND_TYPE
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/execution_backend_info.xml::execution_backend_type_not_null::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table RUNTIME_ATTRIBUTES created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to RUNTIME_ATTRIBUTES (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to RUNTIME_ATTRIBUTES(EXECUTION_ID, ATTRIBUTE_NAME)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/runtime_attributes_table.xml::runtime-attributes-table::tjeandet ran successfully in 4ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table FAILURE_EVENT created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to FAILURE_EVENT (EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Foreign key constraint added to FAILURE_EVENT (WORKFLOW_EXECUTION_ID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/failure_table.xml::failure_table::chrisl ran successfully in 4ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table METADATA_JOURNAL created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_journal::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index METADATA_WORKFLOW_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_workflow_index::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index METADATA_JOB_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_job_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index METADATA_JOB_AND_KEY_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal.xml::metadata_job_and_key_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Columns METADATA_VALUE_TYPE(VARCHAR(10)) added to METADATA_JOURNAL
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_typed_values.xml::metadata_typed_values::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: METADATA_JOURNAL.METADATA_JOURNAL_ID datatype was changed to BIGINT
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Auto-increment added to METADATA_JOURNAL.METADATA_JOURNAL_ID
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::metadata_journal_id_int_to_big_int::kshakir ran successfully in 3ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_summary::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_METADATA_SUMMARY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_uuid_idx::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_NAME_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_name_idx::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_STATUS_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_metadata_summary.xml::workflow_metadata_status_idx::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: METADATA_JOURNAL.METADATA_TIMESTAMP datatype was changed to DATETIME(6)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal_subsecond_timestamp.xml::metadata_journal_subsecond_timestamp::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to METADATA_JOURNAL.METADATA_TIMESTAMP
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/metadata_journal_subsecond_timestamp.xml::metadata_journal_timestamp_not_null::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Table WORKFLOW_STORE created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store.xml::WORKFLOW_STORE::chrisl ran successfully in 3ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_STORE(WORKFLOW_UUID)
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store.xml::workflow_store_uuid_index::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: Index WORKFLOW_STORE_STATE_IDX created
+Aug 16, 2023 10:08:36 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store.xml::workflow_store_state_index::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table BACKEND_KV_STORE created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/backend_KV_Store.xml::BACKEND_KV_STORE::rmunshi ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to BACKEND_KV_STORE(WORKFLOW_EXECUTION_UUID, CALL_FQN, JOB_SCATTER_INDEX, JOB_RETRY_ATTEMPT, STORE_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/backend_KV_Store.xml::backend_KV_store_job_key_constraint::rmunshi ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table JOB_STORE created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store.xml::JOB_STORE::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index JOB_STORE_UUID_IDX created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store.xml::job_store_uuid_index::chrisl ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE(WORKFLOW_UUID, CALL_FQN, JOB_SCATTER_INDEX, JOB_RETRY_ATTEMPT)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store.xml::job_store_jobkey_index::chrisl ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_METAINFO created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_metainfo::chrisl ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_RESULT_METAINFO(WORKFLOW_UUID, CALL_FQN, JOB_SCATTER_INDEX)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_metainfo_uniqueness::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_HASH created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_hashes::chrisl ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_HASH(HASH_KEY, RESULT_METAINFO_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_hashes_uniqueness::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_HASH (RESULT_METAINFO_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_hashes_uniqueness_foreign_key::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_SIMPLETON created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_simpletons::chrisl ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_RESULT_SIMPLETON(SIMPLETON_KEY, RESULT_METAINFO_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_simpletons_uniqueness::chrisl ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_RESULT_SIMPLETON (RESULT_METAINFO_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/callcaching.xml::call_caching_result_simpletons_foreign_key::chrisl ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CALL_CACHING_RESULT_METAINFO.ALLOW_RESULT_REUSE datatype was changed to BOOLEAN
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_allow_result_reuse_fix.xml::call_caching_fix_boolean::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Default value added to CALL_CACHING_RESULT_METAINFO.ALLOW_RESULT_REUSE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_allow_result_reuse_fix.xml::call_caching_reuse_default::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table JOB_STORE_RESULT_SIMPLETON created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_result_simpletons::mcovarr ran successfully in 11ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE_RESULT_SIMPLETON(SIMPLETON_KEY, JOB_STORE_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_result_simpletons_uniqueness::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_RESULT_SIMPLETON (JOB_STORE_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_result_simpletons_foreign_key::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE.JOB_OUTPUT dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_simpletons.xml::job_store_remove_job_output::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::WORKFLOW_STORE_MIGRATION::mcovarr ran successfully in 7ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::JOB_STORE_MIGRATION::mcovarr ran successfully in 8ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from JOB_STORE_RESULT_SIMPLETON.SIMPLETON_VALUE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::JOB_STORE_RESULT_SIMPLETON_VALUE_NULLABLE::mcovarr ran successfully in 23ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_EXECUTION + EXECUTION + SYMBOL + JOB_STORE -> JOB_STORE_RESULT_SIMPLETON migration complete.
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::JOB_STORE_RESULT_SIMPLETON_MIGRATION::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::BACKEND_KV_STORE_MIGRATION::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Workflow option renaming migration complete.
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/restart_and_recover_migration.xml::WORKFLOW_OPTIONS_RENAME_MIGRATION::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/summary_status_table.xml::summary_status_table::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS(SUMMARY_TABLE_NAME, SUMMARIZED_TABLE_NAME)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/summary_status_table.xml::summary_status_summarized_table_name_index::kshakir ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_RESULT_METAINFO.WORKFLOW_UUID renamed to WORKFLOW_EXECUTION_UUID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column WORKFLOW_STORE.WORKFLOW_UUID renamed to WORKFLOW_EXECUTION_UUID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE.WORKFLOW_UUID renamed to WORKFLOW_EXECUTION_UUID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names.xml::workflow_execution_uuid::rmunshi ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column METADATA_JOURNAL.METADATA_CALL_FQN renamed to CALL_FQN
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column METADATA_JOURNAL.METADATA_CALL_INDEX renamed to JOB_SCATTER_INDEX
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column METADATA_JOURNAL.METADATA_CALL_ATTEMPT renamed to JOB_RETRY_ATTEMPT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names.xml::call_job_identifiers::rmunshi ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/embiggen_metadata_value.xml::entry_or_journal_existence_xor::mcovarr ran successfully in 16ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Marking ChangeSet: changesets/embiggen_metadata_value.xml::embiggen_metadata_entry::mcovarr ran despite precondition failure due to onFail='MARK_RAN': 
+          changelog.xml : Table PUBLIC.METADATA_ENTRY does not exist
+
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: METADATA_JOURNAL.METADATA_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/embiggen_metadata_value.xml::embiggen_metadata_journal::mcovarr ran successfully in 4ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_JOB_DETRITUS created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_job_detritus.xml::call_caching_job_detritus::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_JOB_DETRITUS(JOB_DETRITUS_KEY, RESULT_METAINFO_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_job_detritus.xml::call_caching_job_detritus_key_uniqueness::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_JOB_DETRITUS (RESULT_METAINFO_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_job_detritus.xml::call_caching_job_detritus_foreign_key::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: JOB_STORE.JOB_SUCCESSFUL datatype was changed to BOOLEAN
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_tinyints.xml::job_store_fix_job_successful::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: JOB_STORE.RETRYABLE_FAILURE datatype was changed to BOOLEAN
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_tinyints.xml::job_store_fix_job_retryable_failure::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to JOB_STORE.JOB_SUCCESSFUL
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/job_store_tinyints.xml::job_store_not_nullable_job_successful::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index JOB_STORE_UUID_IDX dropped from table JOB_STORE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_NAME_IDX dropped from table WORKFLOW_METADATA_SUMMARY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index WORKFLOW_METADATA_STATUS_IDX dropped from table WORKFLOW_METADATA_SUMMARY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index WORKFLOW_STORE_STATE_IDX dropped from table WORKFLOW_STORE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_JOB_DETRITUS_KEY dropped from CALL_CACHING_JOB_DETRITUS
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_RESULT_METAINFO dropped from CALL_CACHING_RESULT_METAINFO
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_HASH dropped from CALL_CACHING_HASH
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UK_CALL_CACHING_RESULT_SIMPLETON dropped from CALL_CACHING_RESULT_SIMPLETON
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint JOB_STORE_JOBKEY_IDX dropped from JOB_STORE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UK_BACKEND_KV_STORE_KEY dropped from BACKEND_KV_STORE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UK_JOB_STORE_RESULT_SIMPLETON dropped from JOB_STORE_RESULT_SIMPLETON
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint SUMMARY_STATUS_SUMMARY_TABLE_NAME_SUMMARIZED_TABLE_NAME_INDEX dropped from SUMMARY_STATUS
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint WORKFLOW_METADATA_UUID_IDX dropped from WORKFLOW_METADATA_SUMMARY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint WORKFLOW_STORE_UUID_IDX dropped from WORKFLOW_STORE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key CCJD_RESULT_METAINFO_ID_FK dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key CCH_RESULT_METAINFO_ID_FK dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key CCRS_RESULT_METAINFO_ID_FK dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key JSRS_JOB_STORE_FK dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_JOB_DETRITUS renamed to CALL_CACHING_DETRITUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_METAINFO renamed to CALL_CACHING_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_HASH renamed to CALL_CACHING_HASH_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_RESULT_SIMPLETON renamed to CALL_CACHING_SIMPLETON_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table BACKEND_KV_STORE renamed to JOB_KEY_VALUE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table JOB_STORE renamed to JOB_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table JOB_STORE_RESULT_SIMPLETON renamed to JOB_STORE_SIMPLETON_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table METADATA_JOURNAL renamed to METADATA_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS renamed to SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY renamed to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table WORKFLOW_STORE renamed to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.CALL_CACHING_JOB_DETRITUS_ID renamed to CALL_CACHING_DETRITUS_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.JOB_DETRITUS_KEY renamed to DETRITUS_KEY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.JOB_DETRITUS_VALUE renamed to DETRITUS_VALUE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_DETRITUS_ENTRY.RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_ENTRY.CALL_CACHING_RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_ENTRY.JOB_SCATTER_INDEX renamed to JOB_INDEX
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_ENTRY.CALL_FQN renamed to CALL_FULLY_QUALIFIED_NAME
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_HASH_ENTRY.RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_HASH_ENTRY.CALL_CACHING_HASH_ID renamed to CALL_CACHING_HASH_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_SIMPLETON_ENTRY.RESULT_METAINFO_ID renamed to CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column CALL_CACHING_SIMPLETON_ENTRY.CALL_CACHING_RESULT_SIMPLETON_ID renamed to CALL_CACHING_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.JOB_RETRY_ATTEMPT renamed to JOB_ATTEMPT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.JOB_SCATTER_INDEX renamed to JOB_INDEX
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.BACKEND_KV_STORE_ID renamed to JOB_KEY_VALUE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_KEY_VALUE_ENTRY.CALL_FQN renamed to CALL_FULLY_QUALIFIED_NAME
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.JOB_RETRY_ATTEMPT renamed to JOB_ATTEMPT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.JOB_SCATTER_INDEX renamed to JOB_INDEX
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.JOB_STORE_ID renamed to JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE_ENTRY.CALL_FQN renamed to CALL_FULLY_QUALIFIED_NAME
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_ID renamed to JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_RESULT_SIMPLETON_ID renamed to JOB_STORE_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.SUMMARY_STATUS_ID renamed to SUMMARY_STATUS_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column WORKFLOW_METADATA_SUMMARY_ENTRY.END_DT renamed to END_TIMESTAMP
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column WORKFLOW_METADATA_SUMMARY_ENTRY.START_DT renamed to START_TIMESTAMP
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column WORKFLOW_METADATA_SUMMARY_ENTRY.WORKFLOW_METADATA_SUMMARY_ID renamed to WORKFLOW_METADATA_SUMMARY_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column WORKFLOW_STORE_ENTRY.WORKFLOW_STORE_ID renamed to WORKFLOW_STORE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_DETRITUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_HASH_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from CALL_CACHING_SIMPLETON_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from JOB_KEY_VALUE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from JOB_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from JOB_STORE_SIMPLETON_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key dropped from WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_DETRITUS_ENTRY (CALL_CACHING_DETRITUS_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_HASH_ENTRY (CALL_CACHING_HASH_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to CALL_CACHING_SIMPLETON_ENTRY (CALL_CACHING_SIMPLETON_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to JOB_KEY_VALUE_ENTRY (JOB_KEY_VALUE_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to JOB_STORE_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_SIMPLETON_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to SUMMARY_STATUS_ENTRY (SUMMARY_STATUS_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to WORKFLOW_METADATA_SUMMARY_ENTRY (WORKFLOW_METADATA_SUMMARY_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to WORKFLOW_STORE_ENTRY (WORKFLOW_STORE_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_DETRITUS_ENTRY.CALL_CACHING_DETRITUS_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_ENTRY.CALL_CACHING_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_HASH_ENTRY.CALL_CACHING_HASH_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_SIMPLETON_ENTRY.CALL_CACHING_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to JOB_KEY_VALUE_ENTRY.JOB_KEY_VALUE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_ENTRY.JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to SUMMARY_STATUS_ENTRY.SUMMARY_STATUS_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to WORKFLOW_METADATA_SUMMARY_ENTRY.WORKFLOW_METADATA_SUMMARY_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to WORKFLOW_STORE_ENTRY.WORKFLOW_STORE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_DETRITUS_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_HASH_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_SIMPLETON_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_DETRITUS_ENTRY(CALL_CACHING_ENTRY_ID, DETRITUS_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_HASH_ENTRY(CALL_CACHING_ENTRY_ID, HASH_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_SIMPLETON_ENTRY(CALL_CACHING_ENTRY_ID, SIMPLETON_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to JOB_KEY_VALUE_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX, JOB_ATTEMPT, STORE_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX, JOB_ATTEMPT)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to JOB_STORE_SIMPLETON_ENTRY(JOB_STORE_ENTRY_ID, SIMPLETON_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS_ENTRY(SUMMARY_TABLE_NAME, SUMMARIZED_TABLE_NAME)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_METADATA_SUMMARY_ENTRY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_STORE_ENTRY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_JOB_STORE_ENTRY_WEU created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WN created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WS created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_STORE_ENTRY_WS created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names_again.xml::standardize_column_names_again::kshakir ran successfully in 120ms
+[2023-08-16 10:08:37,36] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+[2023-08-16 10:08:37,39] [info] [RenameWorkflowOptionsInMetadata] 100%
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: RenameWorkflowOptionsInMetadata complete.
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/rename_workflow_options_in_metadata.xml::rename_workflow_options_in_metadata::tjeandet ran successfully in 29ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: EncryptWorkflowStoreEntryWorkflowOptions complete.
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/encrypt_and_clear_workflow_options.xml::encrypt_workflow_store_entry_workflow_options::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ClearMetadataEntryWorkflowOptions complete.
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/encrypt_and_clear_workflow_options.xml::clear_metadata_entry_workflow_options::kshakir ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SUB_WORKFLOW_STORE_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::SUB_WORKFLOW_STORE_ENTRY::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_SUB_WORKFLOW_STORE_ENTRY_PWEU created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::sub_workflow_store_uuid_index::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to SUB_WORKFLOW_STORE_ENTRY(PARENT_WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, CALL_INDEX, CALL_ATTEMPT)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::sub_workflow_store_jobkey_index::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to SUB_WORKFLOW_STORE_ENTRY (ROOT_WORKFLOW_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/sub_workflow_store.xml::sub_workflow_store_root_workflow_fk::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns IMPORTS_ZIP(BLOB) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_imports_file.xml::workflow-store-imports-file::cjllanwarne ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns CUSTOM_LABELS(LONGVARCHAR) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_labels_file.xml::workflow-store-labels-file::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CALL_CACHING_DETRITUS_ENTRY.DETRITUS_VALUE datatype was changed to LONGVARCHAR
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/embiggen_detritus_value.xml::embiggen_call_caching_detritus_entry::rmunshi ran successfully in 0ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key FK_CALL_CACHING_HASH_ENTRY_CALL_CACHING_ENTRY_ID dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key FK_JOB_STORE_RESULT_SIMPLETON_JOB_STORE_ENTRY_ID dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key FK_SUB_WORKFLOW_STORE_ROOT_WORKFLOW_ID_WORKFLOW_STORE_ENTRY_ID dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_CALL_CACHING_ENTRY_WEU_CQFN_JI dropped from CALL_CACHING_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_CALL_CACHING_HASH_ENTRY_CCEI dropped from CALL_CACHING_HASH_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_ENTRY(WORKFLOW_EXECUTION_UUID, CALL_FULLY_QUALIFIED_NAME, JOB_INDEX)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CALL_CACHING_HASH_ENTRY(CALL_CACHING_ENTRY_ID, HASH_KEY)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_HASH_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to SUB_WORKFLOW_STORE_ENTRY (ROOT_WORKFLOW_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names_patches.xml::standardize_column_names_patches::kshakir ran successfully in 7ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CALL_CACHING_DETRITUS_ENTRY.DETRITUS_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CALL_CACHING_SIMPLETON_ENTRY.SIMPLETON_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: JOB_STORE_ENTRY.EXCEPTION_MESSAGE datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: JOB_STORE_SIMPLETON_ENTRY.SIMPLETON_VALUE datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.CUSTOM_LABELS datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_DEFINITION datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_INPUTS datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_OPTIONS datatype was changed to LONGTEXT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/standardize_column_names_patches.xml::hsqldb_longvarchar_to_longtext::kshakir ran successfully in 6ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from CALL_CACHING_DETRITUS_ENTRY.DETRITUS_VALUE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from CALL_CACHING_SIMPLETON_ENTRY.SIMPLETON_VALUE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from JOB_STORE_SIMPLETON_ENTRY.SIMPLETON_VALUE
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.WORKFLOW_DEFINITION
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.WORKFLOW_INPUTS
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.WORKFLOW_OPTIONS
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Null constraint dropped from WORKFLOW_STORE_ENTRY.CUSTOM_LABELS
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/nullable_lobs.xml::nullable_lobs::kshakir ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns JOB_ATTEMPT(INT) added to CALL_CACHING_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/add_attempt_in_call_caching_entry.xml::add_attempt_in_call_caching_entry::tjeandet ran successfully in 0ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_STORE_ENTRY.CUSTOM_LABELS
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/replace_empty_custom_labels.xml::custom_labels_not_null::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CALL_CACHING_AGGREGATION_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_aggregated_hashes.xml::call_caching_aggregation_entry::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CALL_CACHING_AGGREGATION_ENTRY (CALL_CACHING_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_CALL_CACHING_AGGREGATION_ENTRY_BA_IFA created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/call_caching_aggregated_hashes.xml::call_caching_aggregation_entry_keys_and_indexes::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CUSTOM_LABEL_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::custom_LABEL_entry::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CUSTOM_LABEL_ENTRY (WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::WMSE_workflow_execution_uuid_foreign_key::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CUSTOM_LABEL_ENTRY(CUSTOM_LABEL_KEY, CUSTOM_LABEL_VALUE, WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::custom_label_entry_index::rmunshi ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_KEY datatype was changed to VARCHAR(63)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_VALUE datatype was changed to VARCHAR(63)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/custom_label_entry.xml::modify label key/value data types::rmunshi ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table DOCKER_HASH_STORE_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/docker_hash_store.xml::DOCKER_HASH_STORE_ENTRY::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to DOCKER_HASH_STORE_ENTRY(WORKFLOW_EXECUTION_UUID, DOCKER_TAG)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/docker_hash_store.xml::docker_hash_store_uuid_unique_constraint::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns WORKFLOW_TYPE(VARCHAR(30)),WORKFLOW_TYPE_VERSION(VARCHAR(255)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_type_and_version.xml::workflow-store-type-and-version::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table EXECUTION_INFO dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table EXECUTION_EVENT dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table FAILURE_EVENT dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table RUNTIME_ATTRIBUTES dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SYMBOL dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table EXECUTION dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION_AUX dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table WORKFLOW_EXECUTION dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/remove_pre_pbe_tables.xml::drop-pre-pbe-tables::mcovarr ran successfully in 7ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key FK_CUSTOM_LABEL_ENTRY_WORKFLOW_EXECUTION_UUID dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_CUSTOM_LABEL_ENTRY_CLK_CLV_WEU dropped from CUSTOM_LABEL_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_SUMMARY_STATUS_ENTRY_STN_STN dropped from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_WORKFLOW_METADATA_SUMMARY_ENTRY_WEU dropped from WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CUSTOM_LABEL_ENTRY dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table METADATA_ENTRY dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS_ENTRY dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY_ENTRY dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/move_sql_metadata_changelog.xml::move_metadata_changelog::kshakir ran successfully in 5ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_STATE datatype was changed to varchar(20)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_state_widening.xml::workflow-store-state-widening::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns RESTARTED(BOOLEAN) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_restarted_column.xml::workflow-store-restarted-column::tjeandet ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_restarted_column.xml::update-restartable::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns WORKFLOW_ROOT(VARCHAR(100)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_workflow_root_column.xml::workflow-store-workflow-root-column::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column WORKFLOW_STORE_ENTRY.RESTARTED dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns CROMWELL_ID(VARCHAR(100)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns HEARTBEAT_TIMESTAMP(TIMESTAMP) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/workflow_store_horizontal_db.xml::workflow-store-horizontal-db::mcovarr ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns WORKFLOW_URL(VARCHAR(255)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/add_workflow_url_in_workflow_store_entry.xml::add_workflow_url_in_workflow_store_entry::sshah ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.WORKFLOW_URL datatype was changed to VARCHAR(2000)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/change_max_size_workflow_url.xml::change_max_size_for_workflow_url::sshah ran successfully in 0ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns DOCKER_SIZE(BIGINT) added to DOCKER_HASH_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/docker_hash_store_add_size_column.xml::docker_hash_store_entry_add_size_column::tjeandet ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to CALL_CACHING_HASH_ENTRY.CALL_CACHING_HASH_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_call_caching_hash_entry_id.xml::restore_auto_increment_call_caching_hash_entry_id::mcovarr ran successfully in 0ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns HOG_GROUP(VARCHAR(100)) added to WORKFLOW_STORE_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/add_hog_group_in_workflow_store.xml::add_hog_group_in_workflow_store::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.HEARTBEAT_TIMESTAMP datatype was changed to DATETIME(6)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: WORKFLOW_STORE_ENTRY.SUBMISSION_TIME datatype was changed to DATETIME(6)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: NOT NULL constraint has been added to WORKFLOW_STORE_ENTRY.SUBMISSION_TIME
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/resync_engine_schema.xml::resync-engine-schema::kshakir ran successfully in 2ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key FK_JOB_STORE_SIMPLETON_ENTRY_JOB_STORE_ENTRY_ID dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::drop_job_store_simpleton_entry_fk::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_ENTRY.JOB_STORE_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::enlarge_job_store_entry_id::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Auto-increment added to JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_SIMPLETON_ENTRY_ID
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::enlarge_job_store_simpleton_entry_id::mcovarr ran successfully in 0ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: JOB_STORE_SIMPLETON_ENTRY.JOB_STORE_ENTRY_ID datatype was changed to BIGINT
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::enlarge_job_store_simpleton_entry_fk::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to JOB_STORE_SIMPLETON_ENTRY (JOB_STORE_ENTRY_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/enlarge_job_store_ids.xml::recreate_job_store_simpleton_entry_fk::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.lockservice
+INFO: Successfully released change log lock
+[2023-08-16 10:08:37,56] [info] Running with database db.url = jdbc:hsqldb:mem:c6e1869c-3306-47da-b2f4-d0f0b8408732;shutdown=false;hsqldb.tx=mvcc
+Aug 16, 2023 10:08:37 AM liquibase.database
+INFO: Set default schema name to PUBLIC
+Aug 16, 2023 10:08:37 AM liquibase.lockservice
+INFO: Successfully acquired change log lock
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Creating database history table with name: PUBLIC.SQLMETADATADATABASECHANGELOG
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Reading from PUBLIC.SQLMETADATADATABASECHANGELOG
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table CUSTOM_LABEL_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table METADATA_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SUMMARY_STATUS_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table WORKFLOW_METADATA_SUMMARY_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CUSTOM_LABEL_ENTRY(CUSTOM_LABEL_KEY, CUSTOM_LABEL_VALUE, WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS_ENTRY(SUMMARY_TABLE_NAME, SUMMARIZED_TABLE_NAME)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to WORKFLOW_METADATA_SUMMARY_ENTRY(WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Foreign key constraint added to CUSTOM_LABEL_ENTRY (WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WN created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_WS created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index METADATA_JOB_AND_KEY_IDX created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index METADATA_JOB_IDX created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index METADATA_WORKFLOW_IDX created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index SYS_IDX_11226 created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/move_sql_metadata_changelog.xml::move_metadata_changelog::kshakir ran successfully in 13ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_KEY datatype was changed to VARCHAR(255)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: CUSTOM_LABEL_ENTRY.CUSTOM_LABEL_VALUE datatype was changed to VARCHAR(255)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet changesets/change_max_size_label_entry.xml::change_max_size_for_key_and_value_in_label::sshah ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data deleted from CUSTOM_LABEL_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_CUSTOM_LABEL_ENTRY_CLK_CLV_WEU dropped from CUSTOM_LABEL_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to CUSTOM_LABEL_ENTRY(CUSTOM_LABEL_KEY, WORKFLOW_EXECUTION_UUID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/delete_duplicate_custom_labels.xml::delete_duplicate_custom_labels::kshakir ran successfully in 3ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns SUBMISSION_TIMESTAMP(DATETIME(6)) added to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_submission_timestamp_metadata_summary.xml::add_submission_timestamp_in_metadata_entry::sshah ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_CUSTOM_LABEL_ENTRY_CLK_CLV created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/custom_label_entry_key_value_index.xml::custom_label_entry_key_value_index::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns PARENT_WORKFLOW_EXECUTION_UUID(VARCHAR(100)),ROOT_WORKFLOW_EXECUTION_UUID(VARCHAR(100)) added to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_PWEU created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_RWEU created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint UC_SUMMARY_STATUS_ENTRY_STN_STN dropped from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.SUMMARY_TABLE_NAME renamed to SUMMARY_NAME
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.SUMMARIZED_TABLE_NAME dropped
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Column SUMMARY_STATUS_ENTRY.MAXIMUM_ID renamed to SUMMARY_POSITION
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Unique constraint added to SUMMARY_STATUS_ENTRY(SUMMARY_NAME)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_parent_and_root_workflow_execution_uuid.xml::add_parent_and_root_workflow_execution_uuid::kshakir ran successfully in 6ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data deleted from SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in SUMMARY_STATUS_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_parent_and_root_workflow_typo_fix.xml::add_parent_and_root_workflow_typo_fix::kshakir ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index METADATA_JOB_AND_KEY_IDX dropped from table METADATA_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index METADATA_JOB_IDX dropped from table METADATA_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/metadata_index_removals.xml::metadata_index_removals::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Columns METADATA_ARCHIVE_STATUS(VARCHAR(30)) added to WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_metadata_archive_status.xml::add_metadata_archive_status::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_MAS created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/add_metadata_archive_status.xml::metadata_archive_status_index::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Table SUMMARY_QUEUE_ENTRY created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/summarization_queue_table.xml::summary_queue_table::gsterin ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/summarization_queue_table.xml::summary_queue_initialization::gsterin ran successfully in 4ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Primary key added to SUMMARY_QUEUE_ENTRY (METADATA_JOURNAL_ID)
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/summarization_queue_table_add_primary_key.xml::summary_queue_add_primary_key::gsterin ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Custom SQL executed
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/remove_non_summarizable_metadata_from_queue.xml::delete_non_summarizable_metadata_from_queue::mcovarr ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_MAS dropped from table WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Index IX_WORKFLOW_METADATA_SUMMARY_ENTRY_MAS_ET created
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/update_metadata_archive_index.xml::update_old_metadata_archive_status_index::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: Data updated in WORKFLOW_METADATA_SUMMARY_ENTRY
+Aug 16, 2023 10:08:37 AM liquibase.changelog
+INFO: ChangeSet metadata_changesets/reset_archive_statuses_to_null.xml::reset_archive_statuses_to_null::cjllanwarne ran successfully in 1ms
+Aug 16, 2023 10:08:37 AM liquibase.lockservice
+INFO: Successfully released change log lock
+[2023-08-16 10:08:38,07] [info] Slf4jLogger started
+[2023-08-16 10:08:38,22] [info] Workflow heartbeat configuration:
+{
+  "cromwellId" : "cromid-56dc59d",
+  "heartbeatInterval" : "2 minutes",
+  "ttl" : "10 minutes",
+  "failureShutdownDuration" : "5 minutes",
+  "writeBatchSize" : 10000,
+  "writeThreshold" : 10000
+}
+[2023-08-16 10:08:38,26] [info] Metadata summary refreshing every 1 second.
+[2023-08-16 10:08:38,26] [info] No metadata archiver defined in config
+[2023-08-16 10:08:38,26] [info] No metadata deleter defined in config
+[2023-08-16 10:08:38,28] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+[2023-08-16 10:08:38,28] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+[2023-08-16 10:08:38,29] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+[2023-08-16 10:08:38,35] [info] JobRestartCheckTokenDispenser - Distribution rate: 50 per 1 seconds.
+[2023-08-16 10:08:38,38] [info] JobExecutionTokenDispenser - Distribution rate: 20 per 10 seconds.
+[2023-08-16 10:08:38,41] [info] SingleWorkflowRunnerActor: Version 74-unknown-SNAP
+[2023-08-16 10:08:38,42] [info] SingleWorkflowRunnerActor: Submitting workflow
+[2023-08-16 10:08:38,44] [info] Unspecified type (Unspecified version) workflow 6134902a-32c6-48d6-9197-a3b8321becd1 submitted
+[2023-08-16 10:08:38,46] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2m6134902a-32c6-48d6-9197-a3b8321becd1[0m
+[2023-08-16 10:08:38,47] [info] 1 new workflows fetched by cromid-56dc59d: 6134902a-32c6-48d6-9197-a3b8321becd1
+[2023-08-16 10:08:38,47] [info] WorkflowManagerActor: Starting workflow [38;5;2m6134902a-32c6-48d6-9197-a3b8321becd1[0m
+[2023-08-16 10:08:38,48] [info] WorkflowManagerActor: Successfully started WorkflowActor-6134902a-32c6-48d6-9197-a3b8321becd1
+[2023-08-16 10:08:38,48] [info] Retrieved 1 workflows from the WorkflowStoreActor
+[2023-08-16 10:08:38,50] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+[2023-08-16 10:08:38,56] [info] MaterializeWorkflowDescriptorActor [[38;5;2m6134902a[0m]: Parsing workflow as WDL 1.0
+[2023-08-16 10:08:39,61] [info] MaterializeWorkflowDescriptorActor [[38;5;2m6134902a[0m]: Call-to-Backend assignments: cardEndToEndVcfMethyl.splitReads -> Local, cardEndToEndVcfMethyl.dv_t -> Local, structuralVariantsDenovoAssembly.shasta_t -> Local, structuralVariantsDenovoAssembly.mergeBAMhapdup -> Local, cardEndToEndVcfMethyl.dipcall -> Local, runMarginPhase.marginPhase -> Local, cardEndToEndVcfMethyl.mergeVCFs -> Local, cardEndToEndVcfMethyl.chr_dv_t -> Local, cardEndToEndVcfMethyl.hapdiff -> Local, runMarginPhase.combineVcfs -> Local, cardEndToEndVcfMethyl.margin_t -> Local, structuralVariantsDenovoAssembly.convertToFasta -> Local, cardEndToEndVcfMethyl.mm_align_chunk -> Local, structuralVariantsDenovoAssembly.hapdup_t -> Local, cardEndToEndVcfMethyl.mergeBAM -> Local, cardEndToEndVcfMethyl.sniffles -> Local, cardEndToEndVcfMethyl.mm_align -> Local, structuralVariantsDenovoAssembly.minimap2_chunk -> Local, structuralVariantsDenovoAssembly.minimap2 -> Local, cardEndToEndVcfMethyl.modbam2bed -> Local
+[2023-08-16 10:08:39,76] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, time, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,76] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,76] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [cpu, memory, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,76] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, time, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [cpu, memory, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [cpu, memory, disks] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, time, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:39,77] [[38;5;220mwarn[0m] Local [[38;5;2m6134902a[0m]: Key/s [preemptible, disks, cpu, memory] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+[2023-08-16 10:08:43,36] [info] Not triggering log of restart checking token queue status. Effective log interval = None
+[2023-08-16 10:08:43,40] [info] Not triggering log of execution token queue status. Effective log interval = None
+[2023-08-16 10:08:43,98] [info] WorkflowExecutionActor-6134902a-32c6-48d6-9197-a3b8321becd1 [[38;5;2m6134902a[0m]: Starting cardEndToEndVcfMethyl.mm_align
+[2023-08-16 10:08:48,41] [info] Assigned new job execution tokens to the following groups: 6134902a: 1
+[2023-08-16 10:08:48,44] [[38;5;220mwarn[0m] BackendPreparationActor_for_6134902a:cardEndToEndVcfMethyl.mm_align:-1:1 [[38;5;2m6134902a[0m]: Docker lookup failed
+java.lang.Exception: Registry registry-vpc.miracle.ac.cn is not supported
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.cromwell$engine$workflow$WorkflowDockerLookupActor$$handleLookupFailure(WorkflowDockerLookupActor.scala:222)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor$$anonfun$3.applyOrElse(WorkflowDockerLookupActor.scala:88)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor$$anonfun$3.applyOrElse(WorkflowDockerLookupActor.scala:73)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at akka.actor.FSM.processEvent(FSM.scala:707)
+	at akka.actor.FSM.processEvent$(FSM.scala:704)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.akka$actor$LoggingFSM$$super$processEvent(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.LoggingFSM.processEvent(FSM.scala:847)
+	at akka.actor.LoggingFSM.processEvent$(FSM.scala:829)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.processEvent(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.FSM.akka$actor$FSM$$processMsg(FSM.scala:701)
+	at akka.actor.FSM$$anonfun$receive$1.applyOrElse(FSM.scala:695)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at cromwell.docker.DockerClientHelper$$anonfun$dockerResponseReceive$1.applyOrElse(DockerClientHelper.scala:16)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:175)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:176)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.aroundReceive(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:614)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:583)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[2023-08-16 10:08:48,49] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2m6134902a[0mcardEndToEndVcfMethyl.mm_align:NA:1]: Unrecognized runtime attribute keys: preemptible, disks, cpu, memory
+[2023-08-16 10:08:48,54] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m6134902a[0mcardEndToEndVcfMethyl.mm_align:NA:1]: [38;5;5mset -o pipefail
+set -e
+set -u
+set -o xtrace
+
+MM_INPUT=/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/inputs/-1180749740/HG002_Guppy6_cpg_chr14.bam
+if [ "${MM_INPUT: -3}" == "bam" ]
+then
+  samtools fastq -TMm,Ml,MM,ML /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/inputs/-1180749740/HG002_Guppy6_cpg_chr14.bam | \
+    minimap2 -ax map-ont /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/inputs/-1180749740/chr14.fasta - -k 17 -y -K 5G -t 20  --eqx | samtools sort -@4 -m 4G > minimap2.bam
+else
+  minimap2 -ax map-ont /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/inputs/-1180749740/chr14.fasta /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/inputs/-1180749740/HG002_Guppy6_cpg_chr14.bam -k 17 -y -K 5G -t 20  --eqx | samtools sort -@4 -m 4G > minimap2.bam
+fi
+
+samtools index -@ 20 minimap2.bam[0m
+[2023-08-16 10:08:48,58] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m6134902a[0mcardEndToEndVcfMethyl.mm_align:NA:1]: executing: # make sure there is no preexisting Docker CID file
+rm -f /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/execution/docker_cid
+# run as in the original configuration without --rm flag (will remove later)
+docker run \
+  --cidfile /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/execution/docker_cid \
+  -i \
+   \
+  --entrypoint /bin/bash \
+  -v /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align:/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align:delegated \
+  registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_minimap2:2.23 /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/execution/script
+
+# get the return code (working even if the container was detached)
+rc=$(docker wait [38;5;5mcat /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/execution/docker_cid[0m)
+
+# remove the container after waiting
+docker rm [38;5;5mcat /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-mm_align/execution/docker_cid[0m
+
+# return exit code
+exit $rc
+[2023-08-16 10:08:50,12] [info] c0176422-06dd-416e-bf69-5c6619f88dda-SubWorkflowActor-SubWorkflow-asm:-1:1 [[38;5;2mc0176422[0m]: Starting structuralVariantsDenovoAssembly.convertToFasta
+[2023-08-16 10:08:53,31] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m6134902a[0mcardEndToEndVcfMethyl.mm_align:NA:1]: job id: 2881
+[2023-08-16 10:08:53,32] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m6134902a[0mcardEndToEndVcfMethyl.mm_align:NA:1]: Status change from - to WaitingForReturnCode
+[2023-08-16 10:08:58,40] [info] Assigned new job execution tokens to the following groups: 6134902a: 1
+[2023-08-16 10:08:58,43] [[38;5;220mwarn[0m] BackendPreparationActor_for_c0176422:structuralVariantsDenovoAssembly.convertToFasta:-1:1 [[38;5;2mc0176422[0m]: Docker lookup failed
+java.lang.Exception: Registry registry-vpc.miracle.ac.cn is not supported
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.cromwell$engine$workflow$WorkflowDockerLookupActor$$handleLookupFailure(WorkflowDockerLookupActor.scala:222)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor$$anonfun$3.applyOrElse(WorkflowDockerLookupActor.scala:88)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor$$anonfun$3.applyOrElse(WorkflowDockerLookupActor.scala:73)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at akka.actor.FSM.processEvent(FSM.scala:707)
+	at akka.actor.FSM.processEvent$(FSM.scala:704)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.akka$actor$LoggingFSM$$super$processEvent(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.LoggingFSM.processEvent(FSM.scala:847)
+	at akka.actor.LoggingFSM.processEvent$(FSM.scala:829)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.processEvent(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.FSM.akka$actor$FSM$$processMsg(FSM.scala:701)
+	at akka.actor.FSM$$anonfun$receive$1.applyOrElse(FSM.scala:695)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at cromwell.docker.DockerClientHelper$$anonfun$dockerResponseReceive$1.applyOrElse(DockerClientHelper.scala:16)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:175)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:176)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.aroundReceive(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:614)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:583)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[2023-08-16 10:08:58,44] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.convertToFasta:NA:1]: Unrecognized runtime attribute keys: preemptible, disks, cpu, memory
+[2023-08-16 10:08:58,44] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.convertToFasta:NA:1]: [38;5;5mset -o pipefail
+set -e
+set -u
+set -o xtrace
+
+READS=/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta/inputs/-1180749740/HG002_Guppy6_cpg_chr14.bam
+if [ "${READS: -3}" == ".gz" ]
+then
+  if [ "${READS: -4}" == "q.gz" ]
+  then
+    zcat $READS | awk '{if(NR%4==1) {printf(">%s\n",substr($0,2));} else if(NR%4==2) print;}' > HG002_Guppy6_cpg_chr14.fasta
+  else
+    zcat $READS > HG002_Guppy6_cpg_chr14.fasta
+  fi
+fi
+
+if [ "${READS: -3}" == "bam" ]
+then
+  samtools fasta -@ 4 $READS > HG002_Guppy6_cpg_chr14.fasta
+fi[0m
+[2023-08-16 10:08:58,45] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.convertToFasta:NA:1]: executing: # make sure there is no preexisting Docker CID file
+rm -f /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta/execution/docker_cid
+# run as in the original configuration without --rm flag (will remove later)
+docker run \
+  --cidfile /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta/execution/docker_cid \
+  -i \
+   \
+  --entrypoint /bin/bash \
+  -v /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta:/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta:delegated \
+  registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_shasta:0.3 /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta/execution/script
+
+# get the return code (working even if the container was detached)
+rc=$(docker wait [38;5;5mcat /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta/execution/docker_cid[0m)
+
+# remove the container after waiting
+docker rm [38;5;5mcat /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-convertToFasta/execution/docker_cid[0m
+
+# return exit code
+exit $rc
+[2023-08-16 10:09:03,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.convertToFasta:NA:1]: job id: 3058
+[2023-08-16 10:09:03,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.convertToFasta:NA:1]: Status change from - to WaitingForReturnCode
+[2023-08-16 10:09:29,01] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.convertToFasta:NA:1]: Status change from WaitingForReturnCode to Done
+[2023-08-16 10:09:32,96] [info] c0176422-06dd-416e-bf69-5c6619f88dda-SubWorkflowActor-SubWorkflow-asm:-1:1 [[38;5;2mc0176422[0m]: Starting structuralVariantsDenovoAssembly.shasta_t
+[2023-08-16 10:09:38,40] [info] Assigned new job execution tokens to the following groups: 6134902a: 1
+[2023-08-16 10:09:38,41] [[38;5;220mwarn[0m] BackendPreparationActor_for_c0176422:structuralVariantsDenovoAssembly.shasta_t:-1:1 [[38;5;2mc0176422[0m]: Docker lookup failed
+java.lang.Exception: Registry registry-vpc.miracle.ac.cn is not supported
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.cromwell$engine$workflow$WorkflowDockerLookupActor$$handleLookupFailure(WorkflowDockerLookupActor.scala:222)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor$$anonfun$3.applyOrElse(WorkflowDockerLookupActor.scala:88)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor$$anonfun$3.applyOrElse(WorkflowDockerLookupActor.scala:73)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at akka.actor.FSM.processEvent(FSM.scala:707)
+	at akka.actor.FSM.processEvent$(FSM.scala:704)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.akka$actor$LoggingFSM$$super$processEvent(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.LoggingFSM.processEvent(FSM.scala:847)
+	at akka.actor.LoggingFSM.processEvent$(FSM.scala:829)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.processEvent(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.FSM.akka$actor$FSM$$processMsg(FSM.scala:701)
+	at akka.actor.FSM$$anonfun$receive$1.applyOrElse(FSM.scala:695)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at cromwell.docker.DockerClientHelper$$anonfun$dockerResponseReceive$1.applyOrElse(DockerClientHelper.scala:16)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:175)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:176)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at cromwell.engine.workflow.WorkflowDockerLookupActor.aroundReceive(WorkflowDockerLookupActor.scala:40)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:614)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:583)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[2023-08-16 10:09:38,42] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.shasta_t:NA:1]: Unrecognized runtime attribute keys: disks, cpu, memory
+[2023-08-16 10:09:38,43] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.shasta_t:NA:1]: [38;5;5mset -o pipefail
+set -e
+set -u
+set -o xtrace
+
+SHASTA_INPUT=/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/inputs/1488777139/HG002_Guppy6_cpg_chr14.fasta
+if [ "${SHASTA_INPUT: -3}" == ".gz" ]
+then
+  if [ "${SHASTA_INPUT: -4}" == "q.gz" ]
+  then
+    UNGZIPPED=${SHASTA_INPUT:0:-3}.fasta
+    zcat $SHASTA_INPUT | awk '{if(NR%4==1) {printf(">%s\n",substr($0,2));} else if(NR%4==2) print;}' > ${UNGZIPPED}
+  else
+    UNGZIPPED=${SHASTA_INPUT:0:-3}
+    zcat $SHASTA_INPUT > ${UNGZIPPED}
+  fi
+  rm $SHASTA_INPUT
+  SHASTA_INPUT=${UNGZIPPED}
+fi
+
+if [ "${SHASTA_INPUT: -3}" == "bam" ]
+then
+  UNGZIPPED=${SHASTA_INPUT:0:-4}.fasta
+  samtools fasta $SHASTA_INPUT > $UNGZIPPED
+  SHASTA_INPUT=${UNGZIPPED}
+fi
+
+#In-memory mode, in case you are shure all samples will fit
+#shasta --input $SHASTA_INPUT --config /opt/shasta_config/Nanopore-R10-Fast-Nov2022.conf --threads 16 2>&1 | tee shasta.log
+
+#By default use disk caching
+shasta --input $SHASTA_INPUT --config /opt/shasta_config/Nanopore-R10-Fast-Nov2022.conf --threads 16 --memoryMode filesystem --memoryBacking disk 2>&1 | tee shasta.log
+
+tar -czvf shasta.log.tar.gz shasta.log ShastaRun/performance.log ShastaRun/stdout.log ShastaRun/AssemblySummary.html[0m
+[2023-08-16 10:09:38,43] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.shasta_t:NA:1]: executing: # make sure there is no preexisting Docker CID file
+rm -f /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/execution/docker_cid
+# run as in the original configuration without --rm flag (will remove later)
+docker run \
+  --cidfile /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/execution/docker_cid \
+  -i \
+   \
+  --entrypoint /bin/bash \
+  -v /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t:/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t:delegated \
+  registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_shasta:0.3 /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/execution/script
+
+# get the return code (working even if the container was detached)
+rc=$(docker wait [38;5;5mcat /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/execution/docker_cid[0m)
+
+# remove the container after waiting
+docker rm [38;5;5mcat /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/execution/docker_cid[0m
+
+# return exit code
+exit $rc
+[2023-08-16 10:09:43,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.shasta_t:NA:1]: job id: 3567
+[2023-08-16 10:09:43,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mc0176422[0mstructuralVariantsDenovoAssembly.shasta_t:NA:1]: Status change from - to Done
+[2023-08-16 10:18:19,58] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2m6134902a[0mcardEndToEndVcfMethyl.mm_align:NA:1]: Status change from WaitingForReturnCode to Done
+[2023-08-16 10:18:20,32] [info] WorkflowManagerActor: Workflow 6134902a-32c6-48d6-9197-a3b8321becd1 failed (during ExecutingWorkflowState): Job structuralVariantsDenovoAssembly.shasta_t:NA:1 exited with return code 2 which has not been declared as a valid return code. See 'continueOnReturnCode' runtime attribute for more details.
+Check the content of stderr for potential additional information: /data/ykx/3_long-read/Nanopore/card_nanopore_wf-r10/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/execution/stderr.
+ [First 3000 bytes]:+ SHASTA_INPUT=/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/inputs/1488777139/HG002_Guppy6_cpg_chr14.fasta
++ '[' sta == .gz ']'
++ '[' sta == bam ']'
++ shasta --input /cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/inputs/1488777139/HG002_Guppy6_cpg_chr14.fasta --config /opt/shasta_config/Nanopore-R10-Fast-Nov2022.conf --threads 16 --memoryMode filesystem --memoryBacking disk
++ tee shasta.log
+
+[2023-08-16 10:18:23,31] [info] WorkflowManagerActor: Workflow actor for 6134902a-32c6-48d6-9197-a3b8321becd1 completed with status 'Failed'. The workflow will be removed from the workflow store.
+[2023-08-16 10:18:37,83] [info] SingleWorkflowRunnerActor workflow finished with status 'Failed'.
+[2023-08-16 10:18:38,30] [info] Workflow polling stopped
+[2023-08-16 10:18:38,32] [info] 0 workflows released by cromid-56dc59d
+[2023-08-16 10:18:38,32] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+[2023-08-16 10:18:38,32] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+[2023-08-16 10:18:38,32] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+[2023-08-16 10:18:38,32] [info] Aborting all running workflows.
+[2023-08-16 10:18:38,32] [info] WorkflowStoreActor stopped
+[2023-08-16 10:18:38,32] [info] JobExecutionTokenDispenser stopped
+[2023-08-16 10:18:38,33] [info] WorkflowLogCopyRouter stopped
+[2023-08-16 10:18:38,33] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+[2023-08-16 10:18:38,33] [info] WorkflowManagerActor: All workflows finished
+[2023-08-16 10:18:38,33] [info] WorkflowManagerActor stopped
+[2023-08-16 10:18:38,60] [info] Connection pools shut down
+[2023-08-16 10:18:38,61] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+[2023-08-16 10:18:38,61] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+[2023-08-16 10:18:38,61] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+[2023-08-16 10:18:38,61] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+[2023-08-16 10:18:38,61] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+[2023-08-16 10:18:38,61] [info] Shutting down IoProxy - Timeout = 1800 seconds
+[2023-08-16 10:18:38,61] [info] SubWorkflowStoreActor stopped
+[2023-08-16 10:18:38,61] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+[2023-08-16 10:18:38,61] [info] JobStoreActor stopped
+[2023-08-16 10:18:38,61] [info] CallCacheWriteActor stopped
+[2023-08-16 10:18:38,61] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+[2023-08-16 10:18:38,61] [info] KvWriteActor Shutting down: 0 queued messages to process
+[2023-08-16 10:18:38,61] [info] IoProxy stopped
+[2023-08-16 10:18:38,61] [info] ServiceRegistryActor stopped
+[2023-08-16 10:18:38,61] [info] DockerHashActor stopped
+[2023-08-16 10:18:38,69] [info] Database closed
+[2023-08-16 10:18:38,69] [info] Stream materializer shut down
+[2023-08-16 10:18:38,69] [info] WDL HTTP import resolver closed
+[2023-08-16 10:18:38,74] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+[2023-08-16 10:18:38,74] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+[2023-08-16 10:18:38,74] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+[2023-08-16 10:18:38,74] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+Workflow 6134902a-32c6-48d6-9197-a3b8321becd1 transitioned to state Failed
+
+shasta --input /cromwell-executions/cromwell-executions/cardEndToEndVcfMethyl/6134902a-32c6-48d6-9197-a3b8321becd1/call-asm/structuralVariantsDenovoAssembly/c0176422-06dd-416e-bf69-5c6619f88dda/call-shasta_t/inputs/1488777139/HG002_Guppy6_cpg_chr14.fasta --config /opt/shasta_config/Nanopore-R10-Fast-Nov2022.conf --threads 16 --memoryMode filesystem --memoryBacking disk

@@ -1,0 +1,6 @@
+*.swp
+*~
+cromwell-workflow-logs
+cromwell-executions
+card_pipeline_small_test
+vntr_annotations

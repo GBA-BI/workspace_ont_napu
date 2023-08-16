@@ -1,0 +1,16 @@
+registry-vpc.miracle.ac.cn/gznl/google_deepvariant:cl508467184
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/google_deepvariant]
+registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_harmonize_vcf:0.1
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_harmonize_vcf]
+registry-vpc.miracle.ac.cn/gznl/quay.io_biocontainers_bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_minimap2:2.23
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_minimap2]
+registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_minimap2_samtools:v2.24_v1.16.1_pigz
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_minimap2_samtools]
+registry-vpc.miracle.ac.cn/gznl/biocontainers_samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+registry-vpc.miracle.ac.cn/gznl/kishwars_pepper_deepvariant:r0.8
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/kishwars_pepper_deepvariant]
+registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_sniffles:2.0.3
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_sniffles]

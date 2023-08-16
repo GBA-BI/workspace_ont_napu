@@ -1,0 +1,823 @@
+--------------
+[PULL] google/deepvariant:cl508467184
+cl508467184: Pulling from google/deepvariant
+7608715873ec: Pulling fs layer
+925aa1050d37: Pulling fs layer
+6a5b2fe5b6d9: Pulling fs layer
+5a49528b329e: Pulling fs layer
+b1d69a61788a: Pulling fs layer
+be68ce9f2b45: Pulling fs layer
+dae1a9ee046a: Pulling fs layer
+03701e39c328: Pulling fs layer
+b1d69a61788a: Waiting
+dae1a9ee046a: Waiting
+c9deeb77f481: Pulling fs layer
+43f7ec1ae22f: Pulling fs layer
+03701e39c328: Waiting
+9ae35fa57681: Pulling fs layer
+c9deeb77f481: Waiting
+43f7ec1ae22f: Waiting
+a9fd9b5ee468: Pulling fs layer
+9ae35fa57681: Waiting
+fa55ab56d53d: Pulling fs layer
+8fc2fa336c7a: Pulling fs layer
+a9fd9b5ee468: Waiting
+fa55ab56d53d: Waiting
+8fc2fa336c7a: Waiting
+57eee77eb591: Pulling fs layer
+38c294c0c410: Pulling fs layer
+b3f414e40170: Pulling fs layer
+38c294c0c410: Waiting
+5fdaeb6d429d: Pulling fs layer
+66e6fc02a3be: Pulling fs layer
+b3f414e40170: Waiting
+bfcaec80b889: Pulling fs layer
+5fdaeb6d429d: Waiting
+66e6fc02a3be: Waiting
+85fdc74e50dd: Pulling fs layer
+21ab9ffce1a4: Pulling fs layer
+ba64b5978321: Pulling fs layer
+8e0b77bc6d70: Pulling fs layer
+21ab9ffce1a4: Waiting
+ba64b5978321: Waiting
+91ec34d301f5: Pulling fs layer
+8e0b77bc6d70: Waiting
+d85b87372d19: Pulling fs layer
+c58112762e68: Pulling fs layer
+91ec34d301f5: Waiting
+3cf97109dd76: Pulling fs layer
+c58112762e68: Waiting
+7b92e78a120a: Pulling fs layer
+7b92e78a120a: Waiting
+f684ac8452ea: Pulling fs layer
+f19061d3dab9: Pulling fs layer
+c09c914417c8: Pulling fs layer
+f684ac8452ea: Waiting
+c09c914417c8: Waiting
+9f3f0e1c9c1a: Pulling fs layer
+98d33341a1b6: Pulling fs layer
+0e244ab34b14: Pulling fs layer
+2dba904bdba4: Pulling fs layer
+1234b91b9cc7: Pulling fs layer
+bf11dfce2543: Pulling fs layer
+98d33341a1b6: Waiting
+0e244ab34b14: Waiting
+9f3f0e1c9c1a: Waiting
+2dba904bdba4: Waiting
+cbf50ac5e2e9: Pulling fs layer
+9d716f0970a8: Pulling fs layer
+bf11dfce2543: Waiting
+cbf50ac5e2e9: Waiting
+5ef026012f27: Pulling fs layer
+3ddb5bf3566c: Pulling fs layer
+124ecb427ab5: Pulling fs layer
+534b0f21e7f6: Pulling fs layer
+46b96306d9e5: Pulling fs layer
+9d716f0970a8: Waiting
+5ef026012f27: Waiting
+169e78191965: Pulling fs layer
+124ecb427ab5: Waiting
+534b0f21e7f6: Waiting
+e05f871fbef9: Pulling fs layer
+46b96306d9e5: Waiting
+3ddb5bf3566c: Waiting
+3d83f757aba1: Pulling fs layer
+e05f871fbef9: Waiting
+98540309bbc8: Pulling fs layer
+3d83f757aba1: Waiting
+43b8758b678d: Pulling fs layer
+1f9e990573a9: Pulling fs layer
+98540309bbc8: Waiting
+ddd1a1998b44: Pulling fs layer
+43b8758b678d: Waiting
+1f9e990573a9: Waiting
+eb3076b54111: Pulling fs layer
+2ac89e4b5267: Pulling fs layer
+01edae246acd: Pulling fs layer
+eb3076b54111: Waiting
+925aa1050d37: Verifying Checksum
+925aa1050d37: Download complete
+6a5b2fe5b6d9: Verifying Checksum
+6a5b2fe5b6d9: Download complete
+5a49528b329e: Verifying Checksum
+5a49528b329e: Download complete
+be68ce9f2b45: Verifying Checksum
+be68ce9f2b45: Download complete
+dae1a9ee046a: Verifying Checksum
+dae1a9ee046a: Download complete
+03701e39c328: Verifying Checksum
+03701e39c328: Download complete
+c9deeb77f481: Verifying Checksum
+c9deeb77f481: Download complete
+43f7ec1ae22f: Verifying Checksum
+43f7ec1ae22f: Download complete
+7608715873ec: Download complete
+7608715873ec: Pull complete
+925aa1050d37: Pull complete
+6a5b2fe5b6d9: Pull complete
+5a49528b329e: Pull complete
+9ae35fa57681: Verifying Checksum
+9ae35fa57681: Download complete
+a9fd9b5ee468: Verifying Checksum
+a9fd9b5ee468: Download complete
+8fc2fa336c7a: Download complete
+fa55ab56d53d: Verifying Checksum
+fa55ab56d53d: Download complete
+57eee77eb591: Verifying Checksum
+57eee77eb591: Download complete
+38c294c0c410: Verifying Checksum
+38c294c0c410: Download complete
+5fdaeb6d429d: Verifying Checksum
+5fdaeb6d429d: Download complete
+b3f414e40170: Verifying Checksum
+b3f414e40170: Download complete
+bfcaec80b889: Verifying Checksum
+bfcaec80b889: Download complete
+85fdc74e50dd: Verifying Checksum
+85fdc74e50dd: Download complete
+66e6fc02a3be: Verifying Checksum
+66e6fc02a3be: Download complete
+ba64b5978321: Verifying Checksum
+ba64b5978321: Download complete
+8e0b77bc6d70: Verifying Checksum
+8e0b77bc6d70: Download complete
+91ec34d301f5: Verifying Checksum
+91ec34d301f5: Download complete
+b1d69a61788a: Verifying Checksum
+b1d69a61788a: Download complete
+c58112762e68: Verifying Checksum
+c58112762e68: Download complete
+3cf97109dd76: Verifying Checksum
+3cf97109dd76: Download complete
+7b92e78a120a: Verifying Checksum
+7b92e78a120a: Download complete
+b1d69a61788a: Pull complete
+be68ce9f2b45: Pull complete
+dae1a9ee046a: Pull complete
+03701e39c328: Pull complete
+c9deeb77f481: Pull complete
+43f7ec1ae22f: Pull complete
+9ae35fa57681: Pull complete
+a9fd9b5ee468: Pull complete
+fa55ab56d53d: Pull complete
+8fc2fa336c7a: Pull complete
+57eee77eb591: Pull complete
+38c294c0c410: Pull complete
+b3f414e40170: Pull complete
+5fdaeb6d429d: Pull complete
+66e6fc02a3be: Pull complete
+bfcaec80b889: Pull complete
+85fdc74e50dd: Pull complete
+d85b87372d19: Verifying Checksum
+d85b87372d19: Download complete
+f19061d3dab9: Verifying Checksum
+f19061d3dab9: Download complete
+f684ac8452ea: Verifying Checksum
+f684ac8452ea: Download complete
+9f3f0e1c9c1a: Verifying Checksum
+9f3f0e1c9c1a: Download complete
+98d33341a1b6: Verifying Checksum
+98d33341a1b6: Download complete
+0e244ab34b14: Verifying Checksum
+0e244ab34b14: Download complete
+c09c914417c8: Verifying Checksum
+c09c914417c8: Download complete
+1234b91b9cc7: Verifying Checksum
+1234b91b9cc7: Download complete
+21ab9ffce1a4: Download complete
+cbf50ac5e2e9: Download complete
+9d716f0970a8: Verifying Checksum
+9d716f0970a8: Download complete
+5ef026012f27: Verifying Checksum
+5ef026012f27: Download complete
+21ab9ffce1a4: Pull complete
+ba64b5978321: Pull complete
+8e0b77bc6d70: Pull complete
+91ec34d301f5: Pull complete
+d85b87372d19: Pull complete
+c58112762e68: Pull complete
+3cf97109dd76: Pull complete
+7b92e78a120a: Pull complete
+f684ac8452ea: Pull complete
+f19061d3dab9: Pull complete
+c09c914417c8: Pull complete
+9f3f0e1c9c1a: Pull complete
+98d33341a1b6: Pull complete
+0e244ab34b14: Pull complete
+2dba904bdba4: Verifying Checksum
+2dba904bdba4: Download complete
+2dba904bdba4: Pull complete
+1234b91b9cc7: Pull complete
+124ecb427ab5: Verifying Checksum
+124ecb427ab5: Download complete
+bf11dfce2543: Verifying Checksum
+bf11dfce2543: Download complete
+bf11dfce2543: Pull complete
+cbf50ac5e2e9: Pull complete
+9d716f0970a8: Pull complete
+5ef026012f27: Pull complete
+46b96306d9e5: Verifying Checksum
+46b96306d9e5: Download complete
+169e78191965: Verifying Checksum
+169e78191965: Download complete
+e05f871fbef9: Verifying Checksum
+e05f871fbef9: Download complete
+3ddb5bf3566c: Verifying Checksum
+3ddb5bf3566c: Download complete
+3ddb5bf3566c: Pull complete
+124ecb427ab5: Pull complete
+98540309bbc8: Verifying Checksum
+98540309bbc8: Download complete
+534b0f21e7f6: Verifying Checksum
+534b0f21e7f6: Download complete
+534b0f21e7f6: Pull complete
+46b96306d9e5: Pull complete
+169e78191965: Pull complete
+e05f871fbef9: Pull complete
+1f9e990573a9: Download complete
+ddd1a1998b44: Verifying Checksum
+ddd1a1998b44: Download complete
+eb3076b54111: Download complete
+3d83f757aba1: Verifying Checksum
+3d83f757aba1: Download complete
+3d83f757aba1: Pull complete
+98540309bbc8: Pull complete
+01edae246acd: Verifying Checksum
+01edae246acd: Download complete
+43b8758b678d: Verifying Checksum
+43b8758b678d: Download complete
+43b8758b678d: Pull complete
+1f9e990573a9: Pull complete
+ddd1a1998b44: Pull complete
+eb3076b54111: Pull complete
+2ac89e4b5267: Download complete
+2ac89e4b5267: Pull complete
+01edae246acd: Pull complete
+Digest: sha256:42a55a17dd3840e3118bb2c772222b9a42422ae4dafdb0b994ab74d1176fafa0
+Status: Downloaded newer image for google/deepvariant:cl508467184
+docker.io/google/deepvariant:cl508467184
+registry-vpc.miracle.ac.cn/gznl/google_deepvariant:cl508467184
+[PUSH] google/deepvariant:cl508467184
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/google_deepvariant]
+23478e02d4d6: Preparing
+01b8a715c784: Preparing
+f0e350b09cf8: Preparing
+a645b6251223: Preparing
+e9d8c834be66: Preparing
+48aaa96429ab: Preparing
+d69305da5ce1: Preparing
+aa1f5f9f3ec3: Preparing
+61af3325a32d: Preparing
+b94b0221a570: Preparing
+48aaa96429ab: Waiting
+01ea308d0815: Preparing
+e807396eb156: Preparing
+07cccddf1909: Preparing
+d69305da5ce1: Waiting
+0ceead0d6bb2: Preparing
+d5fd30f1330b: Preparing
+aa1f5f9f3ec3: Waiting
+2d44409853e8: Preparing
+b94b0221a570: Waiting
+61af3325a32d: Waiting
+e807396eb156: Waiting
+5df0d8b0c2db: Preparing
+9e53f5168782: Preparing
+cc0b418b1d8b: Preparing
+dc1122c7cf01: Preparing
+07cccddf1909: Waiting
+0ceead0d6bb2: Waiting
+5df0d8b0c2db: Waiting
+9e53f5168782: Waiting
+d5fd30f1330b: Waiting
+8173eacdb87e: Preparing
+dc1122c7cf01: Waiting
+2d44409853e8: Waiting
+ceb776ed7331: Preparing
+ecf68368b4fd: Preparing
+8173eacdb87e: Waiting
+090e842af8d2: Preparing
+94bae98b66b1: Preparing
+090e842af8d2: Waiting
+f8a1e7b4fd27: Preparing
+94bae98b66b1: Waiting
+ecf68368b4fd: Waiting
+76d6c73c3f60: Preparing
+43848d0d6b17: Preparing
+0875dc73b029: Preparing
+aff4882de76a: Preparing
+9a7fc5f12e8b: Preparing
+a7699cf5f504: Preparing
+76d6c73c3f60: Waiting
+0875dc73b029: Waiting
+9a7fc5f12e8b: Waiting
+43848d0d6b17: Waiting
+69749c050705: Preparing
+aff4882de76a: Waiting
+f8a1e7b4fd27: Waiting
+a7699cf5f504: Waiting
+8df4e71636a3: Preparing
+69749c050705: Waiting
+589d7876ba8a: Preparing
+8df4e71636a3: Waiting
+db4ef91bb1f1: Preparing
+fa092aacf816: Preparing
+f8d35f95c0c2: Preparing
+45e9a1f9cb1e: Preparing
+6f98d1f3a3d5: Preparing
+2908858aabdf: Preparing
+db4ef91bb1f1: Waiting
+45e9a1f9cb1e: Waiting
+f8d35f95c0c2: Waiting
+a6f6c482fc7f: Preparing
+da70ac6c070f: Preparing
+5cae3ff7b600: Preparing
+9b34b76a0e3d: Preparing
+a6f6c482fc7f: Waiting
+da70ac6c070f: Waiting
+5cae3ff7b600: Waiting
+80a784e9f251: Preparing
+3b17214d1fc3: Preparing
+9b34b76a0e3d: Waiting
+b8c9188b6fe8: Preparing
+34374302cf22: Preparing
+80a784e9f251: Waiting
+b32dd16d0110: Preparing
+3b17214d1fc3: Waiting
+5f97a023198d: Preparing
+5a4284487a70: Preparing
+496a768dd625: Preparing
+a0a6b63947b7: Preparing
+5f97a023198d: Waiting
+d543b8cad89e: Preparing
+5a4284487a70: Waiting
+a0a6b63947b7: Waiting
+d543b8cad89e: Waiting
+f0e350b09cf8: Pushed
+a645b6251223: Pushed
+e9d8c834be66: Pushed
+d69305da5ce1: Pushed
+61af3325a32d: Pushed
+b94b0221a570: Pushed
+01ea308d0815: Pushed
+23478e02d4d6: Pushed
+07cccddf1909: Pushed
+01b8a715c784: Pushed
+d5fd30f1330b: Pushed
+48aaa96429ab: Pushed
+aa1f5f9f3ec3: Pushed
+5df0d8b0c2db: Pushed
+2d44409853e8: Pushed
+cc0b418b1d8b: Pushed
+8173eacdb87e: Pushed
+e807396eb156: Pushed
+ecf68368b4fd: Pushed
+ceb776ed7331: Pushed
+94bae98b66b1: Pushed
+0ceead0d6bb2: Pushed
+76d6c73c3f60: Pushed
+43848d0d6b17: Pushed
+0875dc73b029: Pushed
+dc1122c7cf01: Pushed
+9a7fc5f12e8b: Pushed
+090e842af8d2: Pushed
+a7699cf5f504: Pushed
+9e53f5168782: Pushed
+69749c050705: Pushed
+589d7876ba8a: Pushed
+db4ef91bb1f1: Pushed
+f8a1e7b4fd27: Pushed
+fa092aacf816: Pushed
+f8d35f95c0c2: Pushed
+45e9a1f9cb1e: Pushed
+6f98d1f3a3d5: Pushed
+a6f6c482fc7f: Pushed
+2908858aabdf: Pushed
+da70ac6c070f: Pushed
+5cae3ff7b600: Pushed
+9b34b76a0e3d: Pushed
+80a784e9f251: Pushed
+3b17214d1fc3: Pushed
+b8c9188b6fe8: Pushed
+34374302cf22: Pushed
+b32dd16d0110: Pushed
+5a4284487a70: Pushed
+496a768dd625: Pushed
+a0a6b63947b7: Pushed
+aff4882de76a: Pushed
+d543b8cad89e: Pushed
+5f97a023198d: Pushed
+8df4e71636a3: Pushed
+cl508467184: digest: sha256:42a55a17dd3840e3118bb2c772222b9a42422ae4dafdb0b994ab74d1176fafa0 size: 11864
+[FINISH] google/deepvariant:cl508467184
+--------------
+--------------
+[PULL] mkolmogo/card_harmonize_vcf:0.1
+0.1: Pulling from mkolmogo/card_harmonize_vcf
+Digest: sha256:24d4a8020a8b64b2d0e56054ffd2e6b2a0fc4a3b75d89983152fdd70d0e44abe
+Status: Image is up to date for mkolmogo/card_harmonize_vcf:0.1
+docker.io/mkolmogo/card_harmonize_vcf:0.1
+registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_harmonize_vcf:0.1
+[PUSH] mkolmogo/card_harmonize_vcf:0.1
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_harmonize_vcf]
+fe0dbacadce8: Preparing
+e04b2de2ebe3: Preparing
+8efe26f55a6f: Preparing
+9f0c86bd4562: Preparing
+3b37d36fb3ac: Preparing
+0ccf296224fb: Preparing
+8a60d517cd4b: Preparing
+1fc0c337940c: Preparing
+0ccf296224fb: Waiting
+129177d84d59: Preparing
+8f8f0266f834: Preparing
+8a60d517cd4b: Waiting
+129177d84d59: Waiting
+8f8f0266f834: Waiting
+9f0c86bd4562: Layer already exists
+fe0dbacadce8: Layer already exists
+8efe26f55a6f: Layer already exists
+3b37d36fb3ac: Layer already exists
+e04b2de2ebe3: Layer already exists
+129177d84d59: Layer already exists
+8f8f0266f834: Layer already exists
+0ccf296224fb: Layer already exists
+8a60d517cd4b: Layer already exists
+1fc0c337940c: Layer already exists
+0.1: digest: sha256:24d4a8020a8b64b2d0e56054ffd2e6b2a0fc4a3b75d89983152fdd70d0e44abe size: 2427
+[FINISH] mkolmogo/card_harmonize_vcf:0.1
+--------------
+--------------
+[PULL] quay.io/biocontainers/bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+quay.io/biocontainers/bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b: Pulling from biocontainers/bcftools
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+0f740c7e7ea4: Pulling fs layer
+0f740c7e7ea4: Verifying Checksum
+0f740c7e7ea4: Download complete
+0f740c7e7ea4: Pull complete
+Digest: sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+Status: Downloaded newer image for quay.io/biocontainers/bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+quay.io/biocontainers/bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+registry-vpc.miracle.ac.cn/gznl/quay.io_biocontainers_bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+refusing to create a tag with a digest reference
+[PUSH] quay.io/biocontainers/bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+cannot push a digest reference
+[FINISH] quay.io/biocontainers/bcftools@sha256:95c212df20552fc74670d8f16d20099d9e76245eda6a1a6cfff4bd39e57be01b
+--------------
+--------------
+[PULL] mkolmogo/card_minimap2:2.23
+2.23: Pulling from mkolmogo/card_minimap2
+Digest: sha256:04d096e5dd54f65bbe54f97379253c0b8ec16ccb640511ab69389153a81a95cb
+Status: Image is up to date for mkolmogo/card_minimap2:2.23
+docker.io/mkolmogo/card_minimap2:2.23
+registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_minimap2:2.23
+[PUSH] mkolmogo/card_minimap2:2.23
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_minimap2]
+92cd3a1888de: Preparing
+6b4819971ea1: Preparing
+c3296f5faa60: Preparing
+0120dbf8f6e6: Preparing
+9f54eef41275: Preparing
+9f54eef41275: Layer already exists
+6b4819971ea1: Layer already exists
+c3296f5faa60: Layer already exists
+0120dbf8f6e6: Layer already exists
+92cd3a1888de: Layer already exists
+2.23: digest: sha256:04d096e5dd54f65bbe54f97379253c0b8ec16ccb640511ab69389153a81a95cb size: 1372
+[FINISH] mkolmogo/card_minimap2:2.23
+--------------
+--------------
+[PULL] quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1_pigz
+v2.24_v1.16.1_pigz: Pulling from jmonlong/minimap2_samtools
+7608715873ec: Already exists
+9660c017c323: Pulling fs layer
+14872d617081: Pulling fs layer
+21aea6e9f940: Pulling fs layer
+1daeb54e7e3f: Pulling fs layer
+14872d617081: Verifying Checksum
+14872d617081: Download complete
+21aea6e9f940: Verifying Checksum
+21aea6e9f940: Download complete
+1daeb54e7e3f: Verifying Checksum
+1daeb54e7e3f: Download complete
+9660c017c323: Verifying Checksum
+9660c017c323: Download complete
+9660c017c323: Pull complete
+14872d617081: Pull complete
+21aea6e9f940: Pull complete
+1daeb54e7e3f: Pull complete
+Digest: sha256:7f7d3661e5bb6ef9a6a99450afc28940021a030cbb232097cbd945f271acb5c6
+Status: Downloaded newer image for quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1_pigz
+quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1_pigz
+registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_minimap2_samtools:v2.24_v1.16.1_pigz
+[PUSH] quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1_pigz
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_minimap2_samtools]
+216fb3ade888: Preparing
+d41228eaf36a: Preparing
+0b7694389f6d: Preparing
+e517c1f94908: Preparing
+d543b8cad89e: Preparing
+d543b8cad89e: Mounted from gznl/google_deepvariant
+d41228eaf36a: Pushed
+0b7694389f6d: Pushed
+216fb3ade888: Pushed
+e517c1f94908: Pushed
+v2.24_v1.16.1_pigz: digest: sha256:7f7d3661e5bb6ef9a6a99450afc28940021a030cbb232097cbd945f271acb5c6 size: 1371
+[FINISH] quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1_pigz
+--------------
+--------------
+[PULL] biocontainers/samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+docker.io/biocontainers/samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470: Pulling from biocontainers/samtools
+22dc81ace0ea: Already exists
+1a8b3c87dba3: Already exists
+91390a1c435a: Already exists
+07844b14977e: Already exists
+b78396653dae: Already exists
+37acb86aada8: Already exists
+dea6dd7e30dd: Already exists
+5f8154b871f1: Already exists
+06b022b2c83f: Already exists
+9b2c8a4ecb8d: Already exists
+7b30ef549338: Already exists
+9b34fc643fc1: Already exists
+52c0fab077ab: Already exists
+db8c4567241d: Already exists
+db7cd43b1320: Already exists
+c0db2ee4b7f4: Already exists
+841ca908198c: Pulling fs layer
+841ca908198c: Verifying Checksum
+841ca908198c: Download complete
+841ca908198c: Pull complete
+Digest: sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+Status: Downloaded newer image for biocontainers/samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+docker.io/biocontainers/samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+registry-vpc.miracle.ac.cn/gznl/biocontainers_samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+refusing to create a tag with a digest reference
+[PUSH] biocontainers/samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+cannot push a digest reference
+[FINISH] biocontainers/samtools@sha256:3ff48932a8c38322b0a33635957bc6372727014357b4224d420726da100f5470
+--------------
+--------------
+[PULL] kishwars/pepper_deepvariant:r0.8
+r0.8: Pulling from kishwars/pepper_deepvariant
+Digest: sha256:70908591ad67e8567a6e4551119b2cfc33d957ad39701c8af51b36b516214645
+Status: Image is up to date for kishwars/pepper_deepvariant:r0.8
+docker.io/kishwars/pepper_deepvariant:r0.8
+registry-vpc.miracle.ac.cn/gznl/kishwars_pepper_deepvariant:r0.8
+[PUSH] kishwars/pepper_deepvariant:r0.8
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/kishwars_pepper_deepvariant]
+b68fe420cf6b: Preparing
+bb9343f9ae34: Preparing
+d9f305389905: Preparing
+643bebcb7919: Preparing
+e9cd1d070cb8: Preparing
+91f9858a0b11: Preparing
+ca44972048e2: Preparing
+de1b6ca32aee: Preparing
+7d7292f7e427: Preparing
+8ce17c6537fe: Preparing
+ce6a934c3401: Preparing
+02caf8b699ca: Preparing
+d52643120a37: Preparing
+7d2a491ce4a2: Preparing
+e5c3d0082fb1: Preparing
+ba93151b4b50: Preparing
+d003fb839329: Preparing
+21dc62606f6c: Preparing
+ca44972048e2: Waiting
+de1b6ca32aee: Waiting
+6a3d48e4c6ab: Preparing
+5be275eaa29c: Preparing
+7d7292f7e427: Waiting
+74d54465356c: Preparing
+8ce17c6537fe: Waiting
+537a8d074d5f: Preparing
+ce6a934c3401: Waiting
+d52643120a37: Waiting
+01ed5dad36b7: Preparing
+b8c81c565764: Preparing
+e5c3d0082fb1: Waiting
+d003fb839329: Waiting
+7d2a491ce4a2: Waiting
+ac3d81947364: Preparing
+ba93151b4b50: Waiting
+a9cb39be55b3: Preparing
+5be275eaa29c: Waiting
+74d54465356c: Waiting
+adf613a136bb: Preparing
+b8c81c565764: Waiting
+ac3d81947364: Waiting
+8f4df599c557: Preparing
+21dc62606f6c: Waiting
+6a3d48e4c6ab: Waiting
+95ee91bef36a: Preparing
+a9cb39be55b3: Waiting
+adf613a136bb: Waiting
+fa11f0b2a37d: Preparing
+537a8d074d5f: Waiting
+8f4df599c557: Waiting
+58806e99aeed: Preparing
+c53f8d55ad85: Preparing
+54663df7f865: Preparing
+c0338b246851: Preparing
+95ee91bef36a: Waiting
+c53f8d55ad85: Waiting
+01ed5dad36b7: Waiting
+db0da82b2372: Preparing
+54663df7f865: Waiting
+e130d3a411b2: Preparing
+58806e99aeed: Waiting
+c0338b246851: Waiting
+6e5b10dec148: Preparing
+db0da82b2372: Waiting
+0e549f888e87: Preparing
+e130d3a411b2: Waiting
+597c7b2b916d: Preparing
+ae5216b78444: Preparing
+afb79d427f2a: Preparing
+6e5b10dec148: Waiting
+7fd4b0551e5c: Preparing
+0e549f888e87: Waiting
+597c7b2b916d: Waiting
+ae5216b78444: Waiting
+49d7ef68393f: Preparing
+54cd4320080a: Preparing
+bc290bece486: Preparing
+49d7ef68393f: Waiting
+05ac0e427d60: Preparing
+54cd4320080a: Waiting
+5dd5f1961565: Preparing
+bc290bece486: Waiting
+4069d2ec0015: Preparing
+05ac0e427d60: Waiting
+58be86166b14: Preparing
+5dd5f1961565: Waiting
+2581f5a25579: Preparing
+4069d2ec0015: Waiting
+58be86166b14: Waiting
+3b816c440391: Preparing
+78d9dc27c193: Preparing
+2581f5a25579: Waiting
+985329110ebd: Preparing
+ab5ea00714ad: Preparing
+985329110ebd: Waiting
+f2ba4c44e4a0: Preparing
+78d9dc27c193: Waiting
+88b490a49573: Preparing
+f2ba4c44e4a0: Waiting
+ab5ea00714ad: Waiting
+fa71975ae9e5: Preparing
+7ec9ca58dccf: Preparing
+a5638456dbcb: Preparing
+deea84476d5b: Preparing
+7ec9ca58dccf: Waiting
+2e00949836a2: Preparing
+7d17b8eab15c: Preparing
+deea84476d5b: Waiting
+a5638456dbcb: Waiting
+7b76862d5dd6: Preparing
+2e00949836a2: Waiting
+9f54eef41275: Preparing
+7d17b8eab15c: Waiting
+9f54eef41275: Waiting
+7b76862d5dd6: Waiting
+643bebcb7919: Layer already exists
+d9f305389905: Layer already exists
+b68fe420cf6b: Layer already exists
+bb9343f9ae34: Layer already exists
+e9cd1d070cb8: Layer already exists
+91f9858a0b11: Layer already exists
+ca44972048e2: Layer already exists
+de1b6ca32aee: Layer already exists
+7d7292f7e427: Layer already exists
+8ce17c6537fe: Layer already exists
+02caf8b699ca: Layer already exists
+ce6a934c3401: Layer already exists
+7d2a491ce4a2: Layer already exists
+d52643120a37: Layer already exists
+e5c3d0082fb1: Layer already exists
+d003fb839329: Layer already exists
+ba93151b4b50: Layer already exists
+6a3d48e4c6ab: Layer already exists
+21dc62606f6c: Layer already exists
+5be275eaa29c: Layer already exists
+74d54465356c: Layer already exists
+01ed5dad36b7: Layer already exists
+537a8d074d5f: Layer already exists
+b8c81c565764: Layer already exists
+ac3d81947364: Layer already exists
+a9cb39be55b3: Layer already exists
+8f4df599c557: Layer already exists
+fa11f0b2a37d: Layer already exists
+adf613a136bb: Layer already exists
+95ee91bef36a: Layer already exists
+58806e99aeed: Layer already exists
+c53f8d55ad85: Layer already exists
+54663df7f865: Layer already exists
+c0338b246851: Layer already exists
+db0da82b2372: Layer already exists
+e130d3a411b2: Layer already exists
+0e549f888e87: Layer already exists
+597c7b2b916d: Layer already exists
+6e5b10dec148: Layer already exists
+ae5216b78444: Layer already exists
+afb79d427f2a: Layer already exists
+7fd4b0551e5c: Layer already exists
+49d7ef68393f: Layer already exists
+54cd4320080a: Layer already exists
+bc290bece486: Layer already exists
+05ac0e427d60: Layer already exists
+5dd5f1961565: Layer already exists
+4069d2ec0015: Layer already exists
+2581f5a25579: Layer already exists
+58be86166b14: Layer already exists
+3b816c440391: Layer already exists
+78d9dc27c193: Layer already exists
+985329110ebd: Layer already exists
+ab5ea00714ad: Layer already exists
+f2ba4c44e4a0: Layer already exists
+88b490a49573: Layer already exists
+fa71975ae9e5: Layer already exists
+7ec9ca58dccf: Layer already exists
+a5638456dbcb: Layer already exists
+deea84476d5b: Layer already exists
+2e00949836a2: Layer already exists
+7b76862d5dd6: Layer already exists
+7d17b8eab15c: Layer already exists
+9f54eef41275: Layer already exists
+r0.8: digest: sha256:70908591ad67e8567a6e4551119b2cfc33d957ad39701c8af51b36b516214645 size: 13759
+[FINISH] kishwars/pepper_deepvariant:r0.8
+--------------
+--------------
+[PULL] quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1: Pulling from jmonlong/card_shasta
+7608715873ec: Already exists
+4f44851a5690: Pulling fs layer
+aaeeeb4fe0df: Pulling fs layer
+acab339ca1e8: Pulling fs layer
+5555d5f1b539: Pulling fs layer
+5555d5f1b539: Waiting
+acab339ca1e8: Download complete
+5555d5f1b539: Download complete
+aaeeeb4fe0df: Verifying Checksum
+aaeeeb4fe0df: Download complete
+4f44851a5690: Verifying Checksum
+4f44851a5690: Download complete
+4f44851a5690: Pull complete
+aaeeeb4fe0df: Pull complete
+acab339ca1e8: Pull complete
+5555d5f1b539: Pull complete
+Digest: sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+Status: Downloaded newer image for quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+refusing to create a tag with a digest reference
+[PUSH] quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+cannot push a digest reference
+[FINISH] quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+--------------
+--------------
+[PULL] quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1: Pulling from jmonlong/card_shasta
+Digest: sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+Status: Image is up to date for quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+registry-vpc.miracle.ac.cn/gznl/quay.io_jmonlong_card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+refusing to create a tag with a digest reference
+[PUSH] quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+cannot push a digest reference
+[FINISH] quay.io/jmonlong/card_shasta@sha256:ce218dc133b2534f58f841bccd4b1d1d880c6ad62c1c321dd91bdd8d43e554f1
+--------------
+--------------
+[PULL] mkolmogo/card_sniffles:2.0.3
+2.0.3: Pulling from mkolmogo/card_sniffles
+Digest: sha256:6c16bd3d1855074768f8fac6517a9b490f8486b9ea57c95979070f3d1fd59034
+Status: Image is up to date for mkolmogo/card_sniffles:2.0.3
+docker.io/mkolmogo/card_sniffles:2.0.3
+registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_sniffles:2.0.3
+[PUSH] mkolmogo/card_sniffles:2.0.3
+The push refers to repository [registry-vpc.miracle.ac.cn/gznl/mkolmogo_card_sniffles]
+1640ddd1f356: Preparing
+f8288761c3f4: Preparing
+7fd5293bfd7c: Preparing
+ce988371fd6a: Preparing
+cf5d9966957d: Preparing
+9f54eef41275: Preparing
+9f54eef41275: Waiting
+1640ddd1f356: Layer already exists
+f8288761c3f4: Layer already exists
+9f54eef41275: Layer already exists
+cf5d9966957d: Layer already exists
+ce988371fd6a: Layer already exists
+7fd5293bfd7c: Layer already exists
+2.0.3: digest: sha256:6c16bd3d1855074768f8fac6517a9b490f8486b9ea57c95979070f3d1fd59034 size: 1584
+[FINISH] mkolmogo/card_sniffles:2.0.3
+--------------
