@@ -8,8 +8,8 @@ task dv_t {
 	  File bamAlignmentIndex
       String dvModel = "ONT_R104"
       Boolean oneChr = false
-	  Int memSizeGb = 20
-	  Int diskSizeGb = 50
+	  Int memSizeGb = 64
+	  Int diskSizeGb = 100
       Int preemptible = 0
       File? resourceLogScript
   }  
@@ -73,8 +73,8 @@ task margin_t {
       String sampleName
       Int threads
       String marginOtherArgs = ""
-	  Int memSizeGb = 20
-	  Int diskSizeGb = 50
+	  Int memSizeGb = 64
+	  Int diskSizeGb = 100
       File? resourceLogScript
   }  
 
