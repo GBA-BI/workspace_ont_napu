@@ -96,7 +96,7 @@ task margin_t {
     ln -s ~{bamAlignment} reads.bam
     ln -s ~{bamAlignmentIndex} reads.bam.bai
     
-    mkdir output/
+    # mkdir output/
     margin phase reads.bam ref.fa ~{vcfFile} /opt/margin/params/phase/allParams.haplotag.ont-r104q20.json -t ~{threads} ~{marginOtherArgs} -o output/~{sampleName}
 
     bgzip output/~{sampleName}.phased.vcf
