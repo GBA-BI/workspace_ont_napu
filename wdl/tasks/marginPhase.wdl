@@ -104,7 +104,7 @@ task marginPhase {
         
         samtools index -@ ~{threads} ~{bamFile}
         samtools faidx ~{refFile}
-        mkdir output/
+        # mkdir output/
         margin phase ~{bamFile} ~{refFile} ~{combinedVcfFile} /opt/margin/params/phase/allParams.phase_vcf.ont.sv.json -t ~{threads} ~{marginOtherArgs} -o output/~{sampleName} -M
         bgzip output/~{sampleName}.phased.vcf
     >>>
